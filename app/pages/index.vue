@@ -95,6 +95,6 @@ onMounted(() => {
             </NuxtLink>
         </div>
 
-        <p v-else>Loading...</p>
+        <p v-else class="text-center text-4xl animate-pulse mx-auto mt-20">Loading...</p>
     </div>
 </template>
