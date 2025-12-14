@@ -10,10 +10,6 @@ const items = computed<NavigationMenuItem[]>(() => [
         label: "About",
         to: "/about",
     },
-    // {
-    //     label: "Writing",
-    //     to: "/writings",
-    // },
     {
         label: "GitHub",
         to: "https://github.com/rivethorn",
