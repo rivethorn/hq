@@ -64,11 +64,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="flex flex-col items-start justify-center gap-10">
-        <h1 class="text-5xl font-black">Thoughts & Essays</h1>
+
+    <div class="flex flex-col items-start justify-center gap-10 ">
+        <Meteors :number="30" class="-z-10" />
+        <h1 class="text-5xl font-black">Oh hey, welcome!</h1>
         <h3 class="text-xl font-medium text-muted">
-            Writing about technology, programming, and the intersection of creativity
-            and engineering.
+            Glad to see you here, I'm Hassan. <br />
+            This is where I write my thoughts & essays on programming, technology, and the intersection of creativity
+            and engineering. I'll also just rant sometimes.
         </h3>
 
         <div v-if="!loading" class="-mt-8">

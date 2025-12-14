@@ -25,7 +25,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 <template>
     <UHeader mode="drawer">
         <template #title>
-            <h1>Hassan Qasemi</h1>
+            <h1>Rivethorn's HQ</h1>
         </template>
 
         <UNavigationMenu :items="items" variant="link" />

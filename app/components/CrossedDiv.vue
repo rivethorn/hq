@@ -22,7 +22,7 @@ const { as = 'div', className } = defineProps<{
 
 .cross {
     @apply before:absolute after:absolute;
-    @apply before:top-[-4px] before:bg-inverted before:content-[''] before:w-[1px] before:h-[9px];
-    @apply after:left-[-4px] after:bg-inverted after:content-[''] after:w-[9px] after:h-[1px];
+    @apply before:-top-1 before:bg-inverted before:content-[''] before:w-px before:h-[9px];
+    @apply after:-left-1 after:bg-inverted after:content-[''] after:w-[9px] after:h-px;
 }
 </style>
