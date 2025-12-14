@@ -10,10 +10,10 @@ const items = computed<NavigationMenuItem[]>(() => [
         label: "About",
         to: "/about",
     },
-    {
-        label: "Writing",
-        to: "/writings",
-    },
+    // {
+    //     label: "Writing",
+    //     to: "/writings",
+    // },
     {
         label: "GitHub",
         to: "https://github.com/rivethorn",
@@ -28,7 +28,7 @@ const items = computed<NavigationMenuItem[]>(() => [
             <h1>Hassan Qasemi</h1>
         </template>
 
-        <UNavigationMenu :items="items" />
+        <UNavigationMenu :items="items" variant="link" />
 
         <template #right>
             <ColorAnimBtn />

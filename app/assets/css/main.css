@@ -2,17 +2,22 @@
 @import "@nuxt/ui";
 
 * {
-  font-family: "TT Norms Pro Variable";
+  font-family: "Space Grotesk";
 }
 
 article {
   font-family: "TT Norms Pro Mono Variable";
 }
 
-:root {
-  --ui-radius: 10rem;
+@theme {
+  --header-width: 60rem;
 }
 
+:root {
+  --ui-radius: 10rem;
+  --ui-header-height: --spacing(20);
+  --ui-container: var(--header-width);
+}
 .dark {
   --ui-bg: #1c1c1c;
 }

@@ -2,9 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/mdc", "@nuxtjs/supabase"],
   css: ["~/assets/css/main.css"],
-  fonts: { local: {} },
+  fonts: { local: {}, google: {} },
+  mdc: {},
+  supabase: {
+    redirect: false,
+  },
   app: {
     head: {
       title: "Rivethorn's HQ",
