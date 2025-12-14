@@ -14,7 +14,7 @@ article {
 }
 
 :root {
-  --ui-radius: 10rem;
+  /* --ui-radius: 1rem; */
   --ui-header-height: --spacing(20);
   --ui-container: var(--header-width);
 }
