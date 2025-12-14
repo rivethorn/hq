@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+* {
+  font-family: "TT Norms Pro Variable";
+}
+
+article {
+  font-family: "TT Norms Pro Mono Variable";
+}
+
+:root {
+  --ui-radius: 10rem;
+}
+
+.dark {
+  --ui-bg: #1c1c1c;
+}

@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import type { NavigationMenuItem } from "@nuxt/ui";
+
+const items = computed<NavigationMenuItem[]>(() => [
+    {
+        label: "Blog",
+        to: "/",
+    },
+    {
+        label: "About",
+        to: "/about",
+    },
+    {
+        label: "Writing",
+        to: "/writings",
+    },
+    {
+        label: "GitHub",
+        to: "https://github.com/rivethorn",
+        target: "_blank",
+    },
+]);
+</script>
+
+<template>
+    <UHeader mode="drawer">
+        <template #title>
+            <h1>Hassan Qasemi</h1>
+        </template>
+
+        <UNavigationMenu :items="items" />
+
+        <template #right>
+            <ColorAnimBtn />
+        </template>
+
+        <template #body>
+            <UNavigationMenu :items="items" orientation="vertical" class="mb-[20%]" />
+        </template>
+    </UHeader>
+</template>
