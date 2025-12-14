@@ -25,7 +25,10 @@ const items = computed<NavigationMenuItem[]>(() => [
 <template>
     <UHeader mode="drawer">
         <template #title>
-            <h1>Rivethorn's HQ</h1>
+            <div class="inline-flex gap-2.5">
+                <NuxtImg src="logo-trans.png" sizes="26" class="light:invert" />
+                <h1>Rivethorn's HQ</h1>
+            </div>
         </template>
 
         <UNavigationMenu :items="items" variant="link" />

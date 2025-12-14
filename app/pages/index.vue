@@ -85,11 +85,11 @@ onMounted(() => {
                         <span>·</span>
                         <span>{{ file.tag }}</span>
                     </div>
-                    <span class="text-3xl font-bold transition-all">{{ file.title }}</span>
-                    <span class="text-muted text-xl ">{{ file.summary }}</span>
+                    <span class="text-3xl font-bold">{{ file.title }}</span>
+                    <span class="text-muted text-xl">{{ file.summary }}</span>
                     <div class="flex items-center gap-2 group-hover:gap-4 transition-all">
                         <span class="group-hover:text-muted">Read more</span>
-                        <UIcon name="lucide-arrow-right" class="size-5 group-hover:size-6" />
+                        <UIcon name="lucide-arrow-right" class="size-5  group-hover:size-6" />
                     </div>
                 </CrossedDiv>
             </NuxtLink>
