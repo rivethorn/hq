@@ -5,7 +5,18 @@ export default defineNuxtConfig({
   modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/mdc", "@nuxtjs/supabase"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
-  mdc: {},
+  mdc: {
+    highlight: {
+      langs: ["python", "rust"],
+      theme: {
+        light: "gruvbox-light-hard",
+        dark: "gruvbox-dark-hard",
+      },
+    },
+    headings: {
+      anchorLinks: true,
+    },
+  },
   supabase: {
     redirect: false,
   },
@@ -15,6 +26,9 @@ export default defineNuxtConfig({
       htmlAttrs: {
         dir: "ltr",
         lang: "en_US",
+      },
+      base: {
+        target: "_blank",
       },
       meta: [
         {
