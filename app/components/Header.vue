@@ -11,9 +11,8 @@ const items = computed<NavigationMenuItem[]>(() => [
     to: "/about",
   },
   {
-    label: "GitHub",
-    to: "https://github.com/rivethorn",
-    target: "_blank",
+    label: "Writings",
+    to: "/writings",
   },
 ]);
 </script>
@@ -21,9 +20,13 @@ const items = computed<NavigationMenuItem[]>(() => [
 <template>
   <UHeader mode="drawer">
     <template #title>
-      <div class="inline-flex gap-2.5">
-        <NuxtImg src="logo-trans.png" sizes="26" class="light:invert" />
-        <h1>Rivethorn's HQ</h1>
+      <div class="inline-flex gap-2.5 group">
+        <NuxtImg
+          src="logo-trans.png"
+          sizes="26"
+          class="light:invert group-hover:opacity-60 transition-opacity"
+        />
+        <h1 class="group-hover:text-muted transition-colors">Rivethorn's HQ</h1>
       </div>
     </template>
 
