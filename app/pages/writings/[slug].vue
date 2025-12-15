@@ -50,21 +50,24 @@ onMounted(async () => {
       variant="link"
       color="neutral"
       size="xl"
-      class="inline-flex items-center gap-2 hover:text-primary/80"
+      class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-primary/80"
     >
-      ← Back
+      <UIcon name="lucide-arrow-left" class="size-4" />
+      <span>Back</span>
     </UButton>
     <div v-if="ast">
-      <div class="flex flex-col gap-6 my-4">
-        <div class="flex gap-3 text-muted">
+      <div class="flex flex-col gap-6 mt-10">
+        <div class="flex gap-3 text-muted text-sm lg:text-base">
           <span>{{ new Date(meta?.created_at || "").toDateString() }}</span>
           <span>·</span>
           <span>{{ meta?.time_to_read }}</span>
           <span>·</span>
           <span>{{ meta?.tag }}</span>
         </div>
-        <span class="text-4xl lg:text-5xl font-bold">{{ meta?.title }}</span>
-        <span class="text-muted text-2xl">{{ meta?.summary }}</span>
+        <span class="text-4xl lg:text-5xl font-bold lg:leading-14">{{
+          meta?.title
+        }}</span>
+        <span class="text-muted text-xl lg:text-2xl">{{ meta?.summary }}</span>
       </div>
       <MDC
         :value="ast"
