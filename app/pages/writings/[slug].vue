@@ -6,6 +6,7 @@ const route = useRoute();
 const ast = ref<any>(null);
 const meta = ref<Metadata>();
 const slug = route.params.slug as string;
+const loading = ref(true);
 
 async function loadMeta() {
   const { data, error } = await supabase
@@ -40,11 +41,14 @@ async function loadFile() {
 onMounted(async () => {
   await loadMeta();
   loadFile();
+  loading.value = false;
 });
 </script>
 
 <template>
-  <article class="mx-auto pb-5 mt-10">
+  <article
+    class="max-w-[96%] lg:max-w-[92%] mx-auto border-x border-accented p-4 lg:p-8 mt-0 mb-0 min-h-screen"
+  >
     <UButton
       @click="useRouter().back()"
       variant="link"
@@ -55,7 +59,7 @@ onMounted(async () => {
       <UIcon name="lucide-arrow-left" class="size-4" />
       <span>Back</span>
     </UButton>
-    <div v-if="ast">
+    <TransitionGroup v-if="!loading" name="list" tag="div" class="-mt-8" appear>
       <div class="flex flex-col gap-6 mt-10">
         <div class="flex gap-3 text-muted text-sm lg:text-base">
           <span>{{ new Date(meta?.created_at || "").toDateString() }}</span>
@@ -73,7 +77,8 @@ onMounted(async () => {
         :value="ast"
         class="prose prose-neutral dark:prose-invert animate-in"
       />
-    </div>
+    </TransitionGroup>
+
     <p v-else class="text-center text-4xl animate-pulse mx-auto mt-20">
       Loading...
     </p>
@@ -99,6 +104,27 @@ onMounted(async () => {
 @media (prefers-reduced-motion: reduce) {
   .animate-in {
     animation: none;
+  }
+}
+
+@reference "../../assets/css/main.css";
+.list-enter-from {
+  @apply opacity-0 translate-y-8;
+}
+
+.list-enter-to {
+  @apply opacity-100 translate-y-0;
+}
+
+.list-enter-active {
+  @apply transition-all duration-700
+         ease-[cubic-bezier(0.22,1,0.36,1)];
+  transition-delay: calc(var(--stagger) * 120ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-enter-active {
+    transition: none;
   }
 }
 </style>
