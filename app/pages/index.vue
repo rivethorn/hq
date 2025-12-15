@@ -1,7 +1,5 @@
-<script setup lang="ts">
-const supabase = useSupabaseClient();
-
-interface Metadata {
+<script lang="ts">
+export interface Metadata {
   title: string;
   created_at: string;
   tag: string;
@@ -9,32 +7,20 @@ interface Metadata {
   slug: string;
   summary: string;
 }
+</script>
 
-const files = ref<Array<{ name: string; url: string }>>([]);
-const meta = ref<Array<Metadata>>([]);
-const loading = ref(true);
+<script setup lang="ts">
+const supabase = useSupabaseClient();
 
-async function loadFiles() {
-  const { data, error } = await supabase.storage
-    .from("blog")
-    .list("", { limit: 100, sortBy: { column: "name", order: "asc" } });
+const meta = useState<Metadata[]>("posts-meta", () => []);
+const loading = useState<boolean>("posts-loading", () => true);
 
-  if (error) {
-    console.error(error);
+onMounted(async () => {
+  if (meta.value.length > 0) {
+    loading.value = false;
     return;
   }
 
-  files.value = data
-    .filter((file) => file.name.endsWith(".md")) // Only .md files
-    .map((file) => ({
-      name: file.name.replace(".md", ""), // Display name without extension
-      url: supabase.storage.from("blog").getPublicUrl(file.name).data.publicUrl,
-    }));
-
-  loading.value = false;
-}
-
-async function loadMeta() {
   const { data, error } = await supabase.from("posts").select("*");
 
   if (error) {
@@ -42,20 +28,23 @@ async function loadMeta() {
     return;
   }
 
-  console.log(data);
+  meta.value = data
+    .map((file: Metadata) => ({
+      title: file.title,
+      tag: file.tag,
+      created_at: file.created_at,
+      time_to_read: file.time_to_read,
+      slug: file.slug,
+      summary: file.summary,
+    }))
+    .sort((a, b) => {
+      // newest first
+      return (
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
+    });
 
-  meta.value = data.map((file: Metadata) => ({
-    title: file.title,
-    tag: file.tag,
-    created_at: file.created_at,
-    time_to_read: file.time_to_read,
-    slug: file.slug,
-    summary: file.summary,
-  }));
-}
-onMounted(() => {
-  loadMeta();
-  loadFiles();
+  loading.value = false;
 });
 </script>
 
@@ -69,7 +58,7 @@ onMounted(() => {
       the intersection of creativity and engineering. I'll also just rant
       sometimes.
     </h3>
-    <TransitionGroup v-if="!loading" name="list" tag="div" class="-mt-8">
+    <TransitionGroup v-if="!loading" name="list" tag="div" class="-mt-8" appear>
       <NuxtLink
         v-for="(file, index) in meta"
         :key="file.slug"
