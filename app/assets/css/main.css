@@ -9,6 +9,10 @@
   --header-width: 60rem;
 }
 
+::selection {
+  background: #ff770052;
+}
+
 :root {
   --ui-header-height: --spacing(20);
   --ui-container: var(--header-width);
@@ -36,7 +40,7 @@
 }
 
 .prose p {
-  @apply leading-relaxed text-lg text-toned;
+  @apply leading-relaxed text-base lg:text-lg text-toned;
   font-family: "ZT Nature Variable", sans-serif;
 }
 
@@ -53,6 +57,6 @@
 }
 
 .prose code {
-  @apply rounded bg-muted/40 py-0.5 text-base font-mono;
+  @apply rounded bg-muted/40 py-0.5 text-sm lg:text-base;
   font-family: "Source Code Pro";
 }
