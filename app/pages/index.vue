@@ -72,7 +72,7 @@ onMounted(async () => {
     ease-[cubic-bezier(0.22,1,0.36,1)]
     hover:shadow-xl hover:shadow-black/5"
         >
-          <div class="flex gap-3 text-muted">
+          <div class="flex gap-3 text-muted text-sm lg:text-base">
             <span>{{ new Date(file.created_at).toDateString() }}</span>
             <span>·</span>
             <span>{{ file.time_to_read }}</span>
