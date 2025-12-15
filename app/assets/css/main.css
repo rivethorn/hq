@@ -1,12 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-* {
-  font-family: "Space Grotesk";
-}
-
-article {
-  font-family: "TT Norms Pro Mono Variable";
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
 }
 
 @theme {
@@ -14,7 +10,6 @@ article {
 }
 
 :root {
-  /* --ui-radius: 1rem; */
   --ui-header-height: --spacing(20);
   --ui-container: var(--header-width);
 }
@@ -38,4 +33,26 @@ article {
       opacity: 0;
     }
   }
+}
+
+.prose p {
+  @apply leading-relaxed text-lg text-toned;
+  font-family: "ZT Nature Variable", sans-serif;
+}
+
+.prose h2 {
+  @apply mt-16 mb-6 text-3xl font-bold;
+}
+
+.prose h3 {
+  @apply mt-12 mb-4 text-2xl font-semibold;
+}
+
+.prose pre {
+  @apply rounded bg-muted/40 p-6;
+}
+
+.prose code {
+  @apply rounded bg-muted/40 py-0.5 text-base font-mono;
+  font-family: "Source Code Pro";
 }
