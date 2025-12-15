@@ -46,7 +46,7 @@ onMounted(async () => {
 <template>
   <article class="mx-auto pb-5 mt-10">
     <UButton
-      to="/"
+      @click="useRouter().back()"
       variant="link"
       color="neutral"
       size="xl"
