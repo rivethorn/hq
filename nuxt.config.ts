@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    preset: "github-pages",
+    preset: "cloudflare-pages",
     prerender: {
       crawlLinks: true,
     },
