@@ -23,8 +23,7 @@ const items = computed<NavigationMenuItem[]>(() => [
       <div class="inline-flex gap-2.5 group">
         <NuxtImg
           src="logo-trans.png"
-          sizes="26"
-          class="light:invert group-hover:opacity-60 transition-opacity"
+          class="light:invert group-hover:opacity-60 transition-opacity size-7"
         />
         <h1 class="group-hover:text-muted transition-colors">Rivethorn's HQ</h1>
       </div>
