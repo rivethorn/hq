@@ -47,13 +47,10 @@ const startViewTransition = (event: MouseEvent) => {
 
 <template>
   <ClientOnly>
-    <UButton
-      :aria-label="`Switch to ${nextTheme} mode`"
-      :icon="`i-lucide-${nextTheme === 'dark' ? 'sun' : 'moon'}`"
-      color="neutral"
-      variant="ghost"
-      @click="startViewTransition"
-    />
+    <UTooltip text="Switch theme">
+      <UButton :aria-label="`Switch to ${nextTheme} mode`" :icon="`i-lucide-${nextTheme === 'dark' ? 'sun' : 'moon'}`"
+        color="neutral" variant="ghost" @click="startViewTransition" />
+    </UTooltip>
     <template #fallback>
       <div class="size-4" />
     </template>
@@ -70,6 +67,7 @@ const startViewTransition = (event: MouseEvent) => {
 ::view-transition-new(root) {
   z-index: 9999;
 }
+
 ::view-transition-old(root) {
   z-index: 1;
 }
