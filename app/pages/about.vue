@@ -18,7 +18,7 @@ const { data: about } = await useAsyncData("about", () =>
       <NuxtLink class="links" to="https://x.com" target="_blank">Twitter / X</NuxtLink>
       <NuxtLink class="links" to="https://github.com/rivethorn" target="_blank">GitHub</NuxtLink>
       <NuxtLink class="links" to="https://threads.com" target="_blank">Threads</NuxtLink>
-      <NuxtLink class="links" to="mailto:therivethorn@gmail.com" target="_blank">Email</NuxtLink>
+      <NuxtLink class="links" to="mailto:hassanak813@outlook.com" target="_blank">Email</NuxtLink>
     </div>
   </div>
 </template>
