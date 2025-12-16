@@ -1,6 +1,6 @@
 I’m Hassan, a software developer who builds things that matter to me — small, focused tools and powerful command-line utilities that get the job done without unnecessary complexity. My work tends to live close to the metal: I care about performance, correctness, and really understanding what I’m building.
 
-I started with languages like C# and Python, picked up fundamentals in C, dipped into JavaScript (which taught me a lot — even if it wasn’t love at first sight), and ultimately found a long-term home in Rust because of how it balances reliability with expressiveness. I also enjoy working with Nuxt for creating beautiful user interfaces and experiences.
+I started with languages like C# and Dart, picked up fundamentals in C, dipped into JavaScript (which taught me a lot — even if it wasn’t love at first sight), had a good run with Python and Go (Golang is still a good friend of mine). Nowadays I'm just having fun with Rust, mostly because of how it balances reliability with expressiveness. I also enjoy working with Nuxt for creating beautiful user interfaces and experiences.
 
 My projects tend to avoid the hype. I’m not chasing AI buzzwords, Web3, or cloud-first philosophies. What gets me excited is software you can trust, code you can reason about, and tools that respect your time and attention.
 

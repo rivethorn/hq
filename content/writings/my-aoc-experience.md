@@ -20,7 +20,7 @@ I've mostly done Flutter development, and I also spent a lot of time with C# on 
 So, going in I thought: "I'll use Python to get the language out of the way and just focus on problem solving."  
 Well, it didn't last long.
 
-The first few days didn't seem **that** difficult. Sure, there were a few hiccups here and there, but nothing too unmanageable. Of course, I didn't know the \_how_s, I mostly tried to understand the \_what_s, and then search my way through.  
+The first few days didn't seem **that** difficult. Sure, there were a few hiccups here and there, but nothing too unmanageable. Of course, I didn't know the *how*s, I mostly tried to understand the *what*s, and then search my way through.  
 Years of simple mobile and web development with no proper teacher or mentor can do that to you.  
 But it's not something to be ashamed of.  
 I didn't have proper exposure to the "outside world", and I was learning. I was having fun doing that, until Python did its thing.
