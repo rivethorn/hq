@@ -8,11 +8,11 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
 
 <template>
   <div class="flex flex-col items-start justify-center gap-10">
-    <h1 class="text-5xl font-black">All Writing</h1>
+    <h1 class="text-5xl font-black mb-6">All Writing</h1>
     <h3 class="text-xl font-medium text-muted">
       A complete archive of everything I've written.
     </h3>
-    <TransitionGroup name="list" tag="div" class="" appear>
+    <TransitionGroup name="list" tag="div" class="mx-auto min-w-full" appear>
       <span class="text-lg font-semibold text-toned">{{
         new Date(posts!.at(0)!.date).getFullYear()
       }}</span>
@@ -30,20 +30,23 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
     hover:shadow-xl hover:shadow-black/5"
         >
           <div
-            class="flex gap-3 items-center justify-between text-muted text-sm lg:text-base"
+            class="flex flex-col lg:flex-row gap-3 items-center justify-between text-muted text-sm lg:text-base"
           >
-            <span class="text-lg font-semibold min-w-fit text-highlighted">{{
-              post.title
-            }}</span>
-            <div class="w-full"></div>
-            <span class="min-w-fit">{{
-              new Date(post.date).toLocaleDateString("default", {
-                month: "short",
-                day: "2-digit",
-              })
-            }}</span>
-            <span>·</span>
-            <span class="min-w-fit">{{ post.ttr }}</span>
+            <span
+              class="text-lg font-semibold min-w-fit text-highlighted inline-flex w-full justify-start"
+              >{{ post.title }}</span
+            >
+            <!-- <div class="w-full"></div> -->
+            <div class="inline-flex w-full justify-start lg:justify-end">
+              <span class="min-w-fit">{{
+                new Date(post.date).toLocaleDateString("default", {
+                  month: "short",
+                  day: "2-digit",
+                })
+              }}</span>
+              <span>·</span>
+              <span class="min-w-fit">{{ post.ttr }}</span>
+            </div>
           </div>
         </UCard>
       </NuxtLink>

@@ -30,7 +30,7 @@ const { data: page } = await useAsyncData(route.path, () =>
           <span>·</span>
           <span>{{ page?.tag }}</span>
         </div>
-        <span class="text-4xl lg:text-5xl font-bold lg:leading-14">{{
+        <span class="text-4xl lg:text-5xl font-bold lg:leading-14 mb-4">{{
           page?.title
         }}</span>
         <span class="text-muted text-xl lg:text-2xl">{{

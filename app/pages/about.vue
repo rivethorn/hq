@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-start justify-center gap-16">
-    <h1 class="text-5xl font-black">About</h1>
+    <h1 class="text-5xl font-black mb-6">About</h1>
     <article class="text-lg">
       I'm Hassan Qasemi, a software engineer and developer focused on creating
       thoughtful digital experiences. I write about the intersection of design,
