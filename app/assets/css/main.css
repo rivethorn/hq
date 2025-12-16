@@ -16,9 +16,10 @@
 :root {
   --ui-header-height: --spacing(20);
   --ui-container: var(--header-width);
+  --ui-bg: #f8f3ee;
 }
 .dark {
-  --ui-bg: #1c1c1c;
+  --ui-bg: #090909;
 }
 
 @theme inline {
