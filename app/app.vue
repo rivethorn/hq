@@ -11,6 +11,7 @@ useSeoMeta({
 
 <template>
   <UApp>
+    <NuxtPwaAssets />
     <Header />
 
     <UMain>

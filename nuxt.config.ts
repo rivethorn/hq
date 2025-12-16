@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "@vite-pwa/nuxt"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
   content: {
@@ -18,6 +18,10 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  colorMode: {
+    preference: "dark",
+    fallback: "dark",
   },
   app: {
     // baseURL: "/hq/",
@@ -79,6 +83,68 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
+    },
+  },
+  pwa: {
+    registerType: "autoUpdate",
+    strategies: "generateSW",
+    workbox: {
+      // Minimal precaching - just the HTML files needed for installation
+      globPatterns: ["**/*.{html,js,css}"],
+      // Don't cache anything else - always require network
+      runtimeCaching: [],
+      // Skip waiting and claim clients immediately
+      skipWaiting: true,
+      clientsClaim: true,
+      // Use network-first for navigation
+      navigateFallback: "/",
+      navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
+    },
+    manifest: {
+      name: "Rivethorn's HQ",
+      short_name: "Rivethorn's HQ",
+      description: "Rivethorn's blogs and thoughts",
+      theme_color: "#6e3300",
+      background_color: "#090909",
+      display: "standalone",
+      scope: "/",
+      start_url: "/",
+      icons: [
+        {
+          src: "/logo.png",
+          sizes: "192x192",
+          type: "image/png",
+          purpose: "any",
+        },
+        {
+          src: "/logo.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any",
+        },
+        {
+          src: "/logo.png",
+          sizes: "192x192",
+          type: "image/png",
+          purpose: "maskable",
+        },
+        {
+          src: "/logo.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "maskable",
+        },
+      ],
+      lang: "en_US",
+      dir: "ltr",
+    },
+    pwaAssets: {
+      config: true,
+      overrideManifestIcons: false,
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
     },
   },
 });
