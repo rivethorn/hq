@@ -10,10 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^3.9.0",
     "@nuxt/image": "2.0.0",
     "@nuxt/ui": "4.2.1",
-    "@nuxtjs/mdc": "^0.19.1",
-    "@nuxtjs/supabase": "^2.0.3",
+    "better-sqlite3": "^12.5.0",
     "nuxt": "^4.2.1",
     "typescript": "^5.6.3",
     "vue": "^3.5.25",
