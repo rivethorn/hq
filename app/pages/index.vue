@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: posts, error } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").all()
+  queryCollection("writing").order("date", "DESC").limit(5).all()
 );
 
 if (!posts.value || !error.value) createError({ statusCode: 404 });
@@ -51,6 +51,15 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
           </div>
         </CrossedDiv>
       </NuxtLink>
+
+      <UButton
+        label="See more"
+        color="neutral"
+        to="/writings"
+        size="xl"
+        class="text-xl rounded-2xl px-4 mt-5"
+        variant="outline"
+      />
     </TransitionGroup>
   </div>
 </template>
