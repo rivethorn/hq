@@ -111,25 +111,31 @@ export default defineNuxtConfig({
       start_url: "/",
       icons: [
         {
-          src: "/logo.png",
+          src: "/pwa-64x64.png",
+          sizes: "64x64",
+          type: "image/png",
+          purpose: "any",
+        },
+        {
+          src: "/pwa-192x192.png",
           sizes: "192x192",
           type: "image/png",
           purpose: "any",
         },
         {
-          src: "/logo.png",
+          src: "/pwa-512x512.png",
           sizes: "512x512",
           type: "image/png",
           purpose: "any",
         },
         {
-          src: "/logo.png",
+          src: "/maskable-icon-512x512.png",
           sizes: "192x192",
           type: "image/png",
           purpose: "maskable",
         },
         {
-          src: "/logo.png",
+          src: "/maskable-icon-512x512.png",
           sizes: "512x512",
           type: "image/png",
           purpose: "maskable",
@@ -140,7 +146,8 @@ export default defineNuxtConfig({
     },
     pwaAssets: {
       config: true,
-      overrideManifestIcons: false,
+      overrideManifestIcons: true,
+      preset: "minimal-2023",
     },
     devOptions: {
       enabled: true,
