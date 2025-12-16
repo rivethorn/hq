@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute();
-const slug = route.params.slug as string;
 
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection("writing").path(route.path).first()
