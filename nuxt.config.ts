@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: "/hq/",
+    // baseURL: "/hq/",
     head: {
       title: "Rivethorn's HQ",
       htmlAttrs: {
