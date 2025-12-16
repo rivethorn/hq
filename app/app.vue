@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: "Rivethorn's HQ",
+  ogTitle: "Rivethorn's HQ",
+  description: "This is where you can read my blogs, thoughts and essays on programming and technology.",
+  ogDescription: "This is where you can read my blogs, thoughts and essays on programming and technology.",
+});
+</script>
+
 <template>
   <UApp>
     <Header />
