@@ -44,7 +44,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
                   day: "2-digit",
                 })
               }}</span>
-              <span>·</span>
+              <span class="mx-2.5">·</span>
               <span class="min-w-fit">{{ post.ttr }}</span>
             </div>
           </div>
