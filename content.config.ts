@@ -4,7 +4,7 @@ export default defineContentConfig({
   collections: {
     writing: defineCollection({
       type: "page",
-      source: "**/*.md",
+      source: "writings/*.md",
       schema: z.object({
         title: z.string(),
         tag: z.string(),
@@ -12,6 +12,10 @@ export default defineContentConfig({
         description: z.string(),
         date: z.string(),
       }),
+    }),
+    content: defineCollection({
+      type: "page",
+      source: "about.md",
     }),
   },
 });
