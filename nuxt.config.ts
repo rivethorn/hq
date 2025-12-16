@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     fallback: "dark",
   },
   app: {
-    // baseURL: "/hq/",
     head: {
       title: "Rivethorn's HQ",
       htmlAttrs: {
@@ -148,10 +147,6 @@ export default defineNuxtConfig({
       config: true,
       overrideManifestIcons: true,
       preset: "minimal-2023",
-    },
-    devOptions: {
-      enabled: true,
-      type: "module",
     },
   },
 });
