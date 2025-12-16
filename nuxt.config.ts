@@ -2,23 +2,22 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/mdc", "@nuxtjs/supabase"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
-  mdc: {
-    highlight: {
-      langs: ["python", "rust"],
-      theme: {
-        light: "gruvbox-light-hard",
-        dark: "gruvbox-dark-hard",
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ["ts", "js", "json", "vue", "rust", "python", "yaml"],
+          theme: {
+            light: "gruvbox-light-hard",
+            dark: "gruvbox-dark-hard",
+            default: "gruvbox-dark-hard",
+          },
+        },
       },
     },
-    headings: {
-      anchorLinks: true,
-    },
-  },
-  supabase: {
-    redirect: false,
   },
   app: {
     head: {
@@ -74,6 +73,11 @@ export default defineNuxtConfig({
           },
         },
       },
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
     },
   },
 });
