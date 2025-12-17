@@ -1,9 +1,33 @@
 <script setup lang="ts">
+import { createTimeline, stagger, text, utils } from 'animejs';
+
 const { data: posts, error } = await useAsyncData("posts", () =>
   queryCollection("writing").order("date", "DESC").limit(5).all()
 );
 
 if (!posts.value || !error.value) createError({ statusCode: 404 });
+
+onMounted(() => {
+  const cards = Array.from(document.querySelectorAll<HTMLElement>(".post-card"));
+
+  cards.forEach(card => {
+    const title = card.querySelector<HTMLElement>(".subtle-highlight");
+    if (!title) return;
+
+    const { chars } = text.split(".subtle-highlight", { chars: true });
+
+    const enter = () => {
+      createTimeline().add(chars, { textShadow: '0 0 30px rgba(255,255,255,.9)', ease: 'out(3)', duration: 350, composition: 'replace' }, stagger(8));
+    };
+
+    const leave = () => {
+      createTimeline().add(chars, { textShadow: '0 0 0px rgba(255,255,255,0)', ease: 'out(3)', duration: 350, composition: 'replace' }, stagger(12));
+    };
+
+    card.addEventListener('pointerenter', enter);
+    card.addEventListener('pointerleave', leave);
+  })
+});
 </script>
 
 <template>
@@ -16,21 +40,14 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
       the intersection of creativity and engineering. I'll also just rant
       sometimes.
     </h3>
-    <TransitionGroup name="list" tag="div" class="-mt-8" appear>
-      <NuxtLink
-        v-for="(post, index) in posts"
-        :key="post.title"
-        :to="post.path"
-        class="group flex flex-col gap-3.5 my-16 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
-        :aria-label="`Read ${post.title}`"
-        :style="{ '--stagger': index }"
-      >
-        <CrossedDiv
-          class-name="p-6 lg:p-8 h-full flex flex-col gap-3.5
+    <div class="-mt-8">
+      <NuxtLink v-for="(post, index) in posts" :key="post.title" :to="post.path"
+        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] transition-all hover:bg-accented/10 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
+        :aria-label="`Read ${post.title}`" :style="{ '--stagger': index }">
+        <CrossedDiv class-name="p-6 lg:p-8 h-full flex flex-col gap-3.5
     transition-all duration-300
     ease-[cubic-bezier(0.22,1,0.36,1)]
-    hover:shadow-xl hover:shadow-black/5"
-        >
+    hover:shadow-xl hover:shadow-black/5">
           <div class="flex gap-3 text-muted text-sm lg:text-base">
             <span>{{ new Date(post.date).toDateString() }}</span>
             <span>·</span>
@@ -38,51 +55,22 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
             <span>·</span>
             <span>{{ post.tag }}</span>
           </div>
-          <span class="text-3xl font-bold">{{ post.title }}</span>
+          <h2 class="subtle-highlight text-3xl font-bold">
+            {{ post.title }}
+          </h2>
           <span class="text-muted text-xl">{{ post.description }}</span>
           <div
-            class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4"
-          >
+            class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4">
             <span class="group-hover:text-muted">Read more</span>
-            <UIcon
-              name="lucide-arrow-right"
-              class="size-5 transition-transform duration-300 group-hover:translate-x-1"
-            />
+            <UIcon name="lucide-arrow-right"
+              class="size-5 transition-transform duration-300 group-hover:translate-x-1" />
           </div>
         </CrossedDiv>
       </NuxtLink>
 
-      <UButton
-        label="See more"
-        color="neutral"
-        to="/writings"
-        size="xl"
-        class="text-xl rounded-2xl px-4 mt-5"
-        variant="outline"
-      />
-    </TransitionGroup>
+      <UButton label="See more" color="neutral" to="/writings" size="xl"
+        class="text-lg rounded-md px-4 mt-5 transition-all hover:-translate-y-0.5 active:translate-y-1"
+        variant="outline" />
+    </div>
   </div>
 </template>
-
-<style scoped>
-@reference "../assets/css/main.css";
-.list-enter-from {
-  @apply opacity-0 translate-y-8;
-}
-
-.list-enter-to {
-  @apply opacity-100 translate-y-0;
-}
-
-.list-enter-active {
-  @apply transition-all duration-700
-        ease-[cubic-bezier(0.22,1,0.36,1)];
-  transition-delay: calc(var(--stagger) * 120ms);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .list-enter-active {
-    transition: none;
-  }
-}
-</style>
