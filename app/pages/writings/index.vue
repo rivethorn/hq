@@ -15,7 +15,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
     <div class="mx-auto min-w-full">
       <span class="text-lg font-semibold text-toned">{{
         new Date(posts!.at(0)!.date).getFullYear()
-        }}</span>
+      }}</span>
       <NuxtLink v-for="(post, index) in posts" :key="post.title" :to="post.path"
         class="group flex flex-col gap-3.5 my-8 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
         :style="{ '--stagger': index }">
