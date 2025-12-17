@@ -12,7 +12,7 @@ const { data: about } = await useAsyncData("about", () =>
     </div>
     <ContentRenderer :value="about!" class="text-lg leading-relaxed font-medium" style="
         font-family:
-          'ZT Nature Variable',
+          'Geist',
           sans-serif;
       " />
     <USeparator size="sm" />
