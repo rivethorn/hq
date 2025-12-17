@@ -1,10 +1,8 @@
 <template>
     <USeparator />
-    <UFooter>
+    <UFooter class="pb-10 pt-2">
         <template #left>
-            <p class="text-muted text-sm">
-                {{ new Date().getFullYear() }} Hassan Qasemi.
-            </p>
+            <ColorThemeTab />
         </template>
 
         <template #right>
