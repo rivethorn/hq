@@ -12,30 +12,18 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
     <h3 class="text-xl font-medium text-muted">
       A complete archive of everything I've written.
     </h3>
-    <TransitionGroup name="list" tag="div" class="mx-auto min-w-full" appear>
+    <div class="mx-auto min-w-full">
       <span class="text-lg font-semibold text-toned">{{
         new Date(posts!.at(0)!.date).getFullYear()
-      }}</span>
-      <NuxtLink
-        v-for="(post, index) in posts"
-        :key="post.title"
-        :to="post.path"
+        }}</span>
+      <NuxtLink v-for="(post, index) in posts" :key="post.title" :to="post.path"
         class="group flex flex-col gap-3.5 my-8 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
-        :style="{ '--stagger': index }"
-      >
+        :style="{ '--stagger': index }">
         <UCard
-          class-name="p-8 h-full flex flex-col gap-3.5
-    transition-all duration-300
-    ease-[cubic-bezier(0.22,1,0.36,1)]
-    hover:shadow-xl hover:shadow-black/5"
-        >
-          <div
-            class="flex flex-col lg:flex-row gap-3 items-center justify-between text-muted text-sm lg:text-base"
-          >
-            <span
-              class="text-lg font-semibold min-w-fit text-highlighted inline-flex w-full justify-start"
-              >{{ post.title }}</span
-            >
+          class=" h-full flex flex-col gap-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:bg-accented/10">
+          <div class="flex flex-col lg:flex-row gap-3 items-center justify-between text-muted text-sm lg:text-base">
+            <span class="text-lg font-semibold min-w-fit text-highlighted inline-flex w-full justify-start">{{
+              post.title }}</span>
             <!-- <div class="w-full"></div> -->
             <div class="inline-flex w-full justify-start lg:justify-end">
               <span class="min-w-fit">{{
@@ -50,29 +38,6 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
           </div>
         </UCard>
       </NuxtLink>
-    </TransitionGroup>
+    </div>
   </div>
 </template>
-
-<style scoped>
-@reference "../../assets/css/main.css";
-.list-enter-from {
-  @apply opacity-0 translate-y-8;
-}
-
-.list-enter-to {
-  @apply opacity-100 translate-y-0;
-}
-
-.list-enter-active {
-  @apply transition-all duration-700
-        ease-[cubic-bezier(0.22,1,0.36,1)];
-  transition-delay: calc(var(--stagger) * 120ms);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .list-enter-active {
-    transition: none;
-  }
-}
-</style>
