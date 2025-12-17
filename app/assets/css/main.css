@@ -17,9 +17,11 @@
   --ui-header-height: --spacing(20);
   --ui-container: var(--header-width);
   --ui-bg: #f8f3ee;
+  --ui-primary: #427b58;
 }
 .dark {
   --ui-bg: #090909;
+  --ui-primary: #8ec07c;
 }
 
 @theme inline {
