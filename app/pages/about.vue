@@ -5,7 +5,7 @@ const { data: about } = await useAsyncData("about", () =>
 </script>
 
 <template>
-  <div class="flex flex-col items-start justify-center gap-8">
+  <div class="flex flex-col items-start justify-center gap-8 py-20">
     <div class="inline-flex items-center gap-6 -mt-4">
       <NuxtImg src="profile.jpeg" class="rounded-full size-15 lg:size-20" />
       <h1 class="text-5xl font-black">About Me</h1>

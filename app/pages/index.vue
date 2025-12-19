@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { createTimeline, stagger, text, utils } from 'animejs';
+import { createTimeline, stagger, text } from 'animejs';
 
 const { data: posts, error } = await useAsyncData("posts", () =>
   queryCollection("writing").order("date", "DESC").limit(5).all()
@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col items-start justify-center gap-10">
+  <div class="flex flex-col items-start justify-center gap-10 py-20">
     <Meteors :number="30" class="-z-10" />
     <h1 class="text-5xl font-black mb-6">Oh hey, welcome!</h1>
     <h3 class="text-xl font-medium text-muted">
