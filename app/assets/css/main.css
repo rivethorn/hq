@@ -43,13 +43,17 @@
 }
 
 .prose p {
-  @apply leading-relaxed text-base lg:text-lg text-toned;
+  @apply leading-relaxed text-base lg:text-lg text-inverted/85;
   font-family: "Geist", sans-serif;
   font-weight: 500;
 }
 
-.prose h2 {
-  @apply mt-16 mb-6 text-3xl font-bold;
+.prose a {
+  @apply text-[#499959];
+}
+
+.prose h2 a {
+  @apply mt-16 mb-6 text-3xl font-bold text-inverted;
 }
 
 .prose h3 {
@@ -57,20 +61,10 @@
 }
 
 .prose pre {
-  @apply rounded bg-muted/40 p-6;
+  @apply bg-muted p-6;
 }
 
 .prose code {
-  @apply rounded bg-muted/40 py-0.5 text-sm lg:text-base;
+  @apply rounded bg-muted py-0.5 text-sm lg:text-base;
   font-family: "Geist Mono";
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
-}
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
 }
