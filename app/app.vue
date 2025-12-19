@@ -8,7 +8,7 @@ useSeoMeta({
     "This is where you can read my blogs, thoughts and essays on programming and technology.",
 });
 
-const progress = ref(0)
+const progress = ref(0);
 
 onMounted(() => {
   const onScroll = () => {
@@ -26,14 +26,14 @@ onMounted(() => {
   onBeforeUnmount(() => {
     window.removeEventListener("scroll", onScroll)
   })
-})
+});
 </script>
 
 <template>
   <UApp>
     <NuxtPwaAssets />
 
-    <div v-if="$route.path.startsWith('/writings/')" class="fixed top-0 left-0 right-0 h-0.5 z-40">
+    <div v-if="useRoute().path.startsWith('/writings/')" class="fixed top-0 left-0 right-0 h-0.5 z-40">
       <div class="h-full origin-left bg-primary" :style="{ transform: `scaleX(${progress})` }" />
     </div>
 
