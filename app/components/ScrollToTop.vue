@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+const route = useRoute();
 
 const isVisible = ref(false);
 const THRESHOLD = 50;
@@ -10,6 +10,12 @@ const handleScroll = () => {
 
 const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    history.replaceState(
+        null,
+        '',
+        `${route.path}`
+    );
 };
 
 onMounted(() => {
@@ -29,8 +35,8 @@ onUnmounted(() => {
             leave-active-class="transition duration-200 ease-in" leave-from-class="opacity-100 translate-y-0 scale-100"
             leave-to-class="opacity-0 translate-y-3 scale-95">
             <div v-if="isVisible">
-                <UButton icon="lucide-chevron-up" aria-label="Scroll to top" size="lg" color="neutral" variant="subtle"
-                    class="rounded-full shadow-lg hover:shadow-xl transition-transform hover:-translate-y-0.5"
+                <UButton icon="lucide-chevron-up" aria-label="Scroll to top" size="lg" color="primary" variant="subtle"
+                    class="rounded-full shadow-lg hover:shadow-xl transition-transform hover:-translate-y-0.5 bg-stone-600/90"
                     @click="scrollToTop" />
             </div>
         </Transition>
