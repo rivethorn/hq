@@ -17,11 +17,13 @@
     "animejs": "^4.2.2",
     "better-sqlite3": "^12.5.0",
     "nuxt": "^4.2.2",
+    "rss": "^1.2.2",
     "typescript": "^5.9.3",
     "vue": "^3.5.25",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@types/rss": "^0.0.32",
     "@vite-pwa/assets-generator": "^1.0.2"
   }
 }
