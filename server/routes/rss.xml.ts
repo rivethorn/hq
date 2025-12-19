@@ -8,13 +8,14 @@ export default defineEventHandler(async (event) => {
     description: "Thoughts on programming, systems, and technology.",
     site_url: BASE_URL,
     feed_url: `${BASE_URL}/rss.xml`,
+    image_url: `${BASE_URL}/favicon.ico`,
   });
 
   const posts = await queryCollection(event, "writing")
     .order("date", "DESC")
     .all();
 
-  posts.forEach((post) => {
+  posts.forEach((post: any) => {
     feed.item({
       title: post.title ?? "-",
       url: `${BASE_URL}${post.path}`,
