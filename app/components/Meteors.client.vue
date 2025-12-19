@@ -1,5 +1,6 @@
 <template>
-    <span v-for="(s, i) in meteorStyles" :key="i" :class="localStyles().wrapper({ class: props.class })" :style="s">
+    <span v-for="(s, i) in meteorStyles" :key="i" class="w-screen"
+        :class="localStyles().wrapper({ class: props.class })" :style="s">
         <div :class="localStyles().tail()" />
     </span>
 </template>
