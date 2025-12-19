@@ -24,7 +24,7 @@ const items = computed<NavigationMenuItem[]>(() => [
   <UHeader mode="slideover">
     <template #title>
       <div class="inline-flex gap-2.5 group">
-        <NuxtImg src="logo-trans.png" class="group-hover:opacity-60 transition-opacity size-7" />
+        <NuxtImg src="logo-trans.png" class="light:invert group-hover:opacity-60 transition-opacity size-7" />
         <h1 class="group-hover:text-muted transition-colors">Rivethorn's HQ</h1>
       </div>
     </template>
@@ -32,10 +32,11 @@ const items = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
+      <ColorAnimBtn />
+
       <UTooltip text="RSS Feed">
         <UButton color="neutral" variant="ghost" to="/rss.xml" target="_blank" icon="lucide-rss" aria-label="RSS" />
       </UTooltip>
-
 
       <UTooltip text="My GitHub">
         <UButton color="neutral" variant="ghost" to="https://github.com/rivethorn" target="_blank" icon="lucide-github"

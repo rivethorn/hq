@@ -11,8 +11,9 @@ export default defineNuxtConfig({
         highlight: {
           langs: ["ts", "js", "json", "vue", "rust", "python", "go", "yaml"],
           theme: {
-            dark: "gruvbox-dark-hard",
             default: "gruvbox-dark-hard",
+            dark: "gruvbox-dark-hard",
+            light: "gruvbox-light-hard",
           },
         },
         toc: { depth: 3 },
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
     },
   },
   colorMode: {
-    preference: "dark",
+    preference: "system",
     fallback: "dark",
   },
   app: {

@@ -43,17 +43,13 @@
 }
 
 .prose p {
-  @apply leading-relaxed text-base lg:text-lg text-inverted/85;
+  @apply leading-relaxed text-base lg:text-lg text-toned;
   font-family: "Geist", sans-serif;
   font-weight: 500;
 }
 
-.prose a {
-  @apply text-[#499959];
-}
-
 .prose h2 a {
-  @apply mt-16 mb-6 text-3xl font-bold text-inverted;
+  @apply mt-16 mb-6 text-3xl font-bold;
 }
 
 .prose h3 {

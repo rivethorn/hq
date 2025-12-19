@@ -11,7 +11,6 @@ useSeoMeta({
   ogDescription: page.value?.description,
 });
 
-const { setBackground, resetBackground } = useUiBackground();
 const slug = route.path.split('/').at(-1);
 const activeId = ref<string | null>(null);
 let observer: IntersectionObserver | null = null;
@@ -35,7 +34,6 @@ function scrollTo(id: string) {
 };
 
 onMounted(() => {
-  setBackground('#1C1918');
 
   if (route.hash) {
     const id = route.hash.slice(1)
@@ -65,7 +63,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  resetBackground();
   observer?.disconnect();
 });
 </script>
@@ -75,7 +72,7 @@ onUnmounted(() => {
   <article class="max-w-[96%] lg:max-w-[92%] mx-auto border-x border-accented p-4 lg:p-8 mt-0 mb-0 min-h-screen">
 
     <aside v-if="page?.body?.toc?.links?.length" class="hidden 2xl:block fixed left-6 top-30 w-64">
-      <UCard class="rounded-xl backdrop-blur" variant="subtle">
+      <UCard class="rounded-xl backdrop-blur" variant="outline">
         <span class="block text-xs uppercase tracking-wide text-muted mb-4">
           On this page
         </span>
@@ -112,11 +109,11 @@ onUnmounted(() => {
       <NuxtLink :to="route.path" class="text-4xl lg:text-5xl font-bold lg:leading-14 mb-4">
         <h2>{{
           page?.title
-        }}</h2>
+          }}</h2>
       </NuxtLink>
       <span class="text-muted text-xl lg:text-2xl">{{
         page?.description
-      }}</span>
+        }}</span>
     </div>
     <div class="mt-8 lg:hidden border-2 border-muted rounded-lg px-3">
       <UAccordion :items="[{ label: 'On this page' }]">
@@ -136,7 +133,7 @@ onUnmounted(() => {
     </div>
     <NuxtImg :src="`/posts/${slug}.png`" class="size-full mt-12 rounded-lg w-[95%] lg:w-[85%] mx-auto" fit="cover"
       :alt="slug" />
-    <div class="bg-stone-100 rounded-xl px-3 lg:px-10 pb-0.5 pt-20 my-12 -mx-2 lg:-mx-5 -mt-26">
+    <div class="">
       <ContentRenderer :value="page!" class="prose mb-12" />
     </div>
     <ScrollToTop />
