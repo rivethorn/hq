@@ -42,7 +42,7 @@ onMounted(() => {
     </h3>
     <div class="-mt-8">
       <NuxtLink v-for="(post, index) in posts" :key="post.title" :to="post.path"
-        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] transition-all hover:bg-accented/10 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
+        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] shadow-md transition-all hover:bg-accented/20 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
         :aria-label="`Read ${post.title}`" :style="{ '--stagger': index }">
         <CrossedDiv class-name="p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
     transition-all duration-300
