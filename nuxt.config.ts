@@ -9,18 +9,18 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
-          langs: ["ts", "js", "json", "vue", "rust", "python", "yaml"],
+          langs: ["ts", "js", "json", "vue", "rust", "python", "go", "yaml"],
           theme: {
-            light: "gruvbox-light-hard",
             dark: "gruvbox-dark-hard",
             default: "gruvbox-dark-hard",
           },
         },
+        toc: { depth: 3 },
       },
     },
   },
   colorMode: {
-    preference: "system",
+    preference: "dark",
     fallback: "dark",
   },
   app: {
@@ -29,9 +29,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         dir: "ltr",
         lang: "en_US",
-      },
-      base: {
-        target: "_blank",
       },
       meta: [
         {
@@ -63,10 +60,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-    pageTransition: {
-      name: "page",
-      mode: "out-in",
-    },
   },
   vite: {
     build: {
@@ -88,14 +81,10 @@ export default defineNuxtConfig({
     registerType: "autoUpdate",
     strategies: "generateSW",
     workbox: {
-      // Minimal precaching - just the HTML files needed for installation
       globPatterns: ["**/*.{html,js,css}"],
-      // Don't cache anything else - always require network
       runtimeCaching: [],
-      // Skip waiting and claim clients immediately
       skipWaiting: true,
       clientsClaim: true,
-      // Use network-first for navigation
       navigateFallback: "/",
       navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
     },
