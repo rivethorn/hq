@@ -133,9 +133,9 @@ onUnmounted(() => {
     </div>
     <NuxtImg :src="`/posts/${slug}.png`" class="size-full mt-12 rounded-lg w-[95%] lg:w-[85%] mx-auto" fit="cover"
       :alt="slug" />
-    <div class="">
-      <ContentRenderer :value="page!" class="prose mb-12 lg:px-2" />
-    </div>
+    <base target="_blank">
+    <ContentRenderer :value="page!" class="prose mb-12 lg:px-2" />
+    </base>
     <ScrollToTop />
   </article>
 </template>
