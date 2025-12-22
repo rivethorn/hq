@@ -1,39 +1,16 @@
 <script setup lang="ts">
-import { createTimeline, stagger, text } from 'animejs';
 
 const { data: posts, error } = await useAsyncData("posts", () =>
   queryCollection("writing").order("date", "DESC").limit(5).all()
 );
 
 if (!posts.value || !error.value) createError({ statusCode: 404 });
-
-onMounted(() => {
-  const cards = Array.from(document.querySelectorAll<HTMLElement>(".post-card"));
-
-  cards.forEach(card => {
-    const title = card.querySelector<HTMLElement>(".subtle-highlight");
-    if (!title) return;
-
-    const { chars } = text.split(".subtle-highlight", { chars: true });
-
-    const enter = () => {
-      createTimeline().add(chars, { textShadow: '0 0 30px rgba(255,255,255,.9)', ease: 'out(3)', duration: 350, composition: 'replace' }, stagger(8));
-    };
-
-    const leave = () => {
-      createTimeline().add(chars, { textShadow: '0 0 0px rgba(255,255,255,0)', ease: 'out(3)', duration: 350, composition: 'replace' }, stagger(12));
-    };
-
-    card.addEventListener('pointerenter', enter);
-    card.addEventListener('pointerleave', leave);
-  })
-});
 </script>
 
 <template>
   <div class="flex flex-col items-start justify-center gap-10 py-20">
     <Meteors :number="30" class="-z-10" />
-    <h1 class="text-5xl font-black mb-6">Oh hey, welcome!</h1>
+    <h1 class="subtle-highlight text-5xl font-black mb-6">Oh hey, welcome!</h1>
     <h3 class="text-xl font-medium text-muted">
       Glad to see you here, I'm Hassan. <br />
       This is where I write my thoughts & essays on programming, technology, and
@@ -73,8 +50,19 @@ onMounted(() => {
       </NuxtLink>
 
       <UButton label="See more" color="neutral" to="/writings" size="xl"
-        class="text-lg rounded-md px-4 mt-5 transition-all hover:-translate-y-0.5 active:translate-y-1"
+        class="text-lg rounded-md px-4 mt-5 transition-all hover:-translate-y-0.5 active:translate-y-1 dark:text-2xl"
         variant="outline" />
     </div>
   </div>
 </template>
+
+<style scoped>
+.subtle-highlight {
+  &:where(.dark, .dark *) {
+    text-shadow: 0 0 30px rgba(255, 255, 255, .5);
+  }
+
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+}
+</style>
