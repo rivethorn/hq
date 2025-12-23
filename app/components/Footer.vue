@@ -1,6 +1,6 @@
 <template>
     <USeparator />
-    <UFooter class="pb-10 pt-2">
+    <UFooter class="pb-10 lg:pb-20 pt-2">
         <template #left>
             <ColorThemeTab />
         </template>
@@ -12,4 +12,8 @@
             </span>
         </template>
     </UFooter>
+
+    <div class="flex justify-center">
+        <NuxtImg src="/text.svg" class="w-[92%] lg:w-5xl light:invert" />
+    </div>
 </template>
