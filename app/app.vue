@@ -32,10 +32,7 @@ onMounted(() => {
 <template>
   <UApp>
     <NuxtPwaAssets />
-
-    <div v-if="useRoute().path.startsWith('/writings/')" class="fixed top-0 left-0 right-0 h-0.5 z-40">
-      <div class="h-full origin-left bg-primary" :style="{ transform: `scaleX(${progress})` }" />
-    </div>
+    <NuxtLoadingIndicator />
 
     <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
       <div class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-3 lg:opacity-4" />
@@ -43,6 +40,11 @@ onMounted(() => {
 
     <UMain>
       <Header />
+
+      <div v-if="useRoute().path.startsWith('/writings/')" class="fixed left-0 right-0 h-0.5 z-40">
+        <div class="h-full origin-left bg-primary" :style="{ transform: `scaleX(${progress})` }" />
+      </div>
+
       <NuxtRouteAnnouncer />
       <NuxtPage class="max-w-[92%] lg:w-5xl mx-auto" />
     </UMain>
