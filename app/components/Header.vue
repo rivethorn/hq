@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const { isChristmasSeason, seasonalEffectsEnabled } = useChristmasSeason();
-
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Blog",
@@ -40,16 +38,8 @@ const items = computed<NavigationMenuItem[]>(() => [
     <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
-      <ClientOnly v-if="isChristmasSeason">
-        <UTooltip text="Toggle Snowing effect" :delay-duration="5">
-          <UButton
-            @click="seasonalEffectsEnabled = !seasonalEffectsEnabled"
-            icon="i-lucide-snowflake"
-            :variant="seasonalEffectsEnabled ? 'subtle' : 'ghost'"
-            :color="seasonalEffectsEnabled ? 'primary' : 'neutral'"
-          />
-        </UTooltip>
-      </ClientOnly>
+      <SnowEffectToggle />
+
       <ColorAnimBtn />
 
       <UTooltip text="RSS Feed">
