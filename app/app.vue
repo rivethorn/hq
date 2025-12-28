@@ -36,14 +36,12 @@ onMounted(() => {
     <NuxtPwaAssets />
     <NuxtLoadingIndicator />
 
-    <ClientOnly>
-      <SnowEffectComponent
-        v-if="enableSnowEffect"
-        color="#ffffffbb"
-        :flakes="85"
-        :speed="1"
-      />
-    </ClientOnly>
+    <SnowEffectComponent
+      v-if="enableSnowEffect"
+      color="#ffffffbb"
+      :flakes="85"
+      :speed="1"
+    />
 
     <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
       <div
