@@ -44,20 +44,11 @@ onMounted(() => {
     <ClientOnly>
       <snow-effect
         v-if="enableSnowEffect"
-        color="white"
-        flakes="100"
+        color="#ffffffbb"
+        flakes="85"
         speed="1"
       />
     </ClientOnly>
-
-    <!-- <ClientOnly>
-      <SnowEffectComponent
-        v-if="enableSnowEffect"
-        color="#ffffffbb"
-        :flakes="85"
-        :speed="1"
-      />
-    </ClientOnly> -->
 
     <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
       <div
