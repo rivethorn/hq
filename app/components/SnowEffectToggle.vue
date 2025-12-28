@@ -34,7 +34,7 @@ const triggerConfetti = () => {
 
 <template>
   <ClientOnly v-if="isChristmasSeason">
-    <UTooltip text="Toggle Snowing effect" :delay-duration="5">
+    <UTooltip text="Toggle Snowing effect">
       <UButton
         @click="seasonalEffectsEnabled = !seasonalEffectsEnabled"
         v-on:click="triggerConfetti"
