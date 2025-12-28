@@ -2,13 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: [
-    "@nuxt/image",
-    "@nuxt/ui",
-    "@nuxt/content",
-    "@vite-pwa/nuxt",
-    "nuxt-snow-effect",
-  ],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "@vite-pwa/nuxt", "@le-pepe/nuxt-snow-effect"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
   content: {
