@@ -9,6 +9,7 @@ useSeoMeta({
 });
 
 const progress = ref(0);
+const route = useRoute();
 
 const { enableSnowEffect } = useChristmasSeason();
 
@@ -53,7 +54,7 @@ onMounted(() => {
       <Header />
 
       <div
-        v-if="useRoute().path.startsWith('/writings/')"
+        v-if="route.path.startsWith('/writings/')"
         class="fixed left-0 right-0 h-0.5 z-40"
       >
         <div
