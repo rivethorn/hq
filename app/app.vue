@@ -14,6 +14,7 @@ useSeoMeta({
 
 const progress = ref(0);
 const route = useRoute();
+const color = useColorMode();
 
 const { enableSnowEffect } = useChristmasSeason();
 
@@ -44,7 +45,7 @@ onMounted(() => {
     <ClientOnly>
       <snow-effect
         v-if="enableSnowEffect"
-        color="#ffffff88"
+        :color="color.value === 'dark' ? '#ffffff88' : '#33333355'"
         flakes="85"
         speed="1"
       />
