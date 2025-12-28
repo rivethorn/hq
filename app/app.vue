@@ -10,22 +10,24 @@ useSeoMeta({
 
 const progress = ref(0);
 
+const { enableSnowEffect } = useChristmasSeason();
+
 onMounted(() => {
   const onScroll = () => {
-    const scrollTop = window.scrollY
+    const scrollTop = window.scrollY;
     const height =
       document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
+      document.documentElement.clientHeight;
 
-    progress.value = height > 0 ? scrollTop / height : 0
-  }
+    progress.value = height > 0 ? scrollTop / height : 0;
+  };
 
-  window.addEventListener("scroll", onScroll, { passive: true })
-  onScroll()
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   onBeforeUnmount(() => {
-    window.removeEventListener("scroll", onScroll)
-  })
+    window.removeEventListener("scroll", onScroll);
+  });
 });
 </script>
 
@@ -34,15 +36,32 @@ onMounted(() => {
     <NuxtPwaAssets />
     <NuxtLoadingIndicator />
 
+    <ClientOnly>
+      <SnowEffectComponent
+        v-if="enableSnowEffect"
+        color="#ffffffbb"
+        :flakes="85"
+        :speed="1"
+      />
+    </ClientOnly>
+
     <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-      <div class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-3 lg:opacity-4" />
+      <div
+        class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-3 lg:opacity-4"
+      />
     </div>
 
     <UMain>
       <Header />
 
-      <div v-if="useRoute().path.startsWith('/writings/')" class="fixed left-0 right-0 h-0.5 z-40">
-        <div class="h-full origin-left bg-primary" :style="{ transform: `scaleX(${progress})` }" />
+      <div
+        v-if="useRoute().path.startsWith('/writings/')"
+        class="fixed left-0 right-0 h-0.5 z-40"
+      >
+        <div
+          class="h-full origin-left bg-primary"
+          :style="{ transform: `scaleX(${progress})` }"
+        />
       </div>
 
       <NuxtRouteAnnouncer />
@@ -51,5 +70,4 @@ onMounted(() => {
 
     <Footer />
   </UApp>
-
 </template>
