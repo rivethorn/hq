@@ -45,7 +45,7 @@ onMounted(() => {
     <ClientOnly>
       <snow-effect
         v-if="enableSnowEffect"
-        :color="color.value === 'dark' ? '#ffffff88' : '#33333355'"
+        :color="color.value === 'dark' ? '#ffffff55' : '#33333355'"
         flakes="85"
         speed="1"
       />
