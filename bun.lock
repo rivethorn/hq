@@ -5,7 +5,7 @@
       "name": "hq",
       "dependencies": {
         "@le-pepe/nuxt-snow-effect": "^1.5.0",
-        "@nuxt/content": "^3.9.0",
+        "@nuxt/content": "^3.10.0",
         "@nuxt/image": "2.0.0",
         "@nuxt/ui": "4.2.1",
         "@vite-pwa/nuxt": "^1.1.0",
@@ -14,7 +14,7 @@
         "nuxt": "^4.2.2",
         "rss": "^1.2.2",
         "typescript": "^5.9.3",
-        "vue": "^3.5.25",
+        "vue": "^3.5.26",
         "vue-router": "^4.6.4",
       },
       "devDependencies": {
