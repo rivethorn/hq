@@ -86,7 +86,7 @@ It relies on a straightforward `toml` configuration file to understand where thi
 
 Right now, it supports two commands: `publish` and `delete`. Maybe more will come in the future — we’ll see.
 
-I won’t dive into the internal details here. Those are covered properly in the [documentation](https://nuch.vercel.app). The source code is also available on GitHub, and contributions are more than welcome.
+I won’t dive into the internal details here. Those are covered properly in the [documentation](https://nuch.vercel.app). The source code is also available on [GitHub](https://github.com/rivethorn/nuch), and contributions are more than welcome.
 
 ## Epilogue
 
