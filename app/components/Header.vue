@@ -41,7 +41,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <template #right>
       <ClientOnly v-if="isChristmasSeason">
-        <UTooltip text="Toggle Snowing effect">
+        <UTooltip text="Toggle Snowing effect" :delay-duration="5">
           <UButton
             @click="seasonalEffectsEnabled = !seasonalEffectsEnabled"
             icon="i-lucide-snowflake"
