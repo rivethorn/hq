@@ -1,9 +1,18 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const nextTheme = computed(() =>
-  colorMode.value === "dark" ? "light" : "dark"
-);
+const modes = ["light", "dark", "system"] as const;
+type Mode = (typeof modes)[number];
+
+const currentPreference = computed<Mode>(() => {
+  if (colorMode.preference === "system") return "system";
+  return (colorMode.preference as Mode) ?? "system";
+});
+
+const nextTheme = computed<Mode>(() => {
+  const index = modes.indexOf(currentPreference.value);
+  return modes[(index + 1) % modes.length];
+});
 
 const switchTheme = () => {
   colorMode.preference = nextTheme.value;
@@ -47,9 +56,22 @@ const startViewTransition = (event: MouseEvent) => {
 
 <template>
   <ClientOnly>
-    <UTooltip text="Switch theme">
-      <UButton :aria-label="`Switch to ${nextTheme} mode`" :icon="`i-lucide-${nextTheme === 'dark' ? 'sun' : 'moon'}`"
-        color="neutral" variant="ghost" @click="startViewTransition" />
+    <UTooltip
+      :text="
+        colorMode.preference === 'dark'
+          ? 'Theme: Dark mode'
+          : colorMode.value === 'light'
+            ? 'Theme: Light mode'
+            : 'Theme: Based on System'
+      "
+    >
+      <UButton
+        :aria-label="`Switch to ${nextTheme} mode`"
+        :icon="`i-tabler-${nextTheme === 'dark' ? 'sun' : nextTheme === 'light' ? 'device-desktop' : 'moon'}`"
+        color="neutral"
+        variant="ghost"
+        @click="switchTheme"
+      />
     </UTooltip>
     <template #fallback>
       <div class="size-4" />
