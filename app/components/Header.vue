@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from "@nuxt/ui";
 
+const { isChristmasSeason, seasonalEffectsEnabled } = useChristmasSeason();
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: "Blog",
@@ -24,25 +26,53 @@ const items = computed<NavigationMenuItem[]>(() => [
   <UHeader mode="slideover">
     <template #title>
       <div class="inline-flex gap-2.5 group">
-        <NuxtImg src="logo-trans.png" class="light:invert group-hover:opacity-60 transition-opacity size-7" />
-        <h1 class="group-hover:text-muted transition-colors">Rivethorn's HQ</h1>
+        <NuxtImg
+          src="logo-trans.png"
+          class="light:invert group-hover:opacity-60 transition-opacity size-7"
+        />
+        <h1 class="hidden lg:block group-hover:text-muted transition-colors">
+          Rivethorn's HQ
+        </h1>
+        <h1 class="lg:hidden group-hover:text-muted transition-colors">RHQ</h1>
       </div>
     </template>
 
     <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
+      <ClientOnly v-if="isChristmasSeason">
+        <UTooltip text="Toggle Snowing effect">
+          <UButton
+            @click="seasonalEffectsEnabled = !seasonalEffectsEnabled"
+            icon="i-lucide-snowflake"
+            :variant="seasonalEffectsEnabled ? 'subtle' : 'ghost'"
+            :color="seasonalEffectsEnabled ? 'primary' : 'neutral'"
+          />
+        </UTooltip>
+      </ClientOnly>
       <ColorAnimBtn />
 
       <UTooltip text="RSS Feed">
-        <UButton color="neutral" variant="ghost" to="/rss.xml" target="_blank" icon="lucide-rss" aria-label="RSS" />
+        <UButton
+          color="neutral"
+          variant="ghost"
+          to="/rss.xml"
+          target="_blank"
+          icon="lucide-rss"
+          aria-label="RSS"
+        />
       </UTooltip>
 
       <UTooltip text="My GitHub">
-        <UButton color="neutral" variant="ghost" to="https://github.com/rivethorn" target="_blank" icon="lucide-github"
-          aria-label="GitHub" />
+        <UButton
+          color="neutral"
+          variant="ghost"
+          to="https://github.com/rivethorn"
+          target="_blank"
+          icon="lucide-github"
+          aria-label="GitHub"
+        />
       </UTooltip>
-
     </template>
 
     <template #body>
