@@ -81,7 +81,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      strict: false,
+      strict: true,
     },
   },
 });
