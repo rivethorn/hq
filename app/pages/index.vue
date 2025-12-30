@@ -25,7 +25,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
         v-for="(post, index) in posts"
         :key="post.title"
         :to="post.path"
-        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] shadow-md transition-all hover:bg-accented/20 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
+        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] bg-elevated/10 shadow-md transition-all hover:bg-accented/30 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
         :aria-label="`Read ${post.title}`"
         :style="{ '--stagger': index }"
       >
