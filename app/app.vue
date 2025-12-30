@@ -39,7 +39,6 @@ onMounted(() => {
 
 <template>
   <UApp>
-    <NuxtPwaAssets />
     <NuxtLoadingIndicator />
 
     <ClientOnly>

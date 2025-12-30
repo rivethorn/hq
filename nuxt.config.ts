@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "@vite-pwa/nuxt"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
   content: {
@@ -84,66 +84,5 @@ export default defineNuxtConfig({
         baseURL: "/_nuxt",
       },
     ],
-  },
-  pwa: {
-    registerType: "autoUpdate",
-    strategies: "generateSW",
-    workbox: {
-      globPatterns: ["**/*.{html,js,css}"],
-      runtimeCaching: [],
-      skipWaiting: true,
-      clientsClaim: true,
-      navigateFallback: "/",
-      navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/],
-    },
-    manifest: {
-      name: "Rivethorn's HQ",
-      short_name: "Rivethorn's HQ",
-      description: "Rivethorn's blogs and thoughts",
-      theme_color: "#6e3300",
-      background_color: "#090909",
-      display: "standalone",
-      scope: "/",
-      start_url: "/",
-      icons: [
-        {
-          src: "/pwa-64x64.png",
-          sizes: "64x64",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "/pwa-192x192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "/pwa-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "/maskable-icon-512x512.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "/maskable-icon-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-      ],
-      lang: "en_US",
-      dir: "ltr",
-    },
-    pwaAssets: {
-      config: true,
-      overrideManifestIcons: true,
-      preset: "minimal-2023",
-    },
   },
 });
