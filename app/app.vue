@@ -39,7 +39,7 @@ onMounted(() => {
 
 <template>
   <UApp>
-    <NuxtLoadingIndicator />
+    <NuxtLoadingIndicator color="#e78a4e" />
 
     <ClientOnly>
       <snow-effect
