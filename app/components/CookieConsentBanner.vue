@@ -46,8 +46,8 @@ const accept = () => {
         class="pointer-events-auto mx-4 max-w-80 rounded-xl border border-muted bg-default/60 shadow-lg backdrop-blur px-4 py-3 flex flex-col gap-3 text-xs sm:text-sm text-default"
       >
         <p class="leading-relaxed">
-          This site uses small cookies to remember your preferences (like theme
-          and settings). By continuing to browse, you consent to this.
+          This site uses just one cookie to remember your visual effects
+          preference. By continuing to browse, you consent to this.
         </p>
 
         <div class="flex justify-end gap-2">
