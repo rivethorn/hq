@@ -75,6 +75,8 @@ onMounted(() => {
 
     <Footer />
 
-    <CookieConsentBanner />
+    <ClientOnly>
+      <CookieConsentBanner />
+    </ClientOnly>
   </UApp>
 </template>

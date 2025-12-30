@@ -1,13 +1,30 @@
 <script setup lang="ts">
-const consent = useCookie<"accepted" | undefined>("hq-cookie-consent", {
-  sameSite: "lax",
-  maxAge: 60 * 60 * 24 * 365, // 1 year
+const consent = ref<"accepted" | undefined>();
+const hydrated = ref(false);
+
+onMounted(() => {
+  try {
+    const stored = localStorage.getItem("hq-cookie-consent");
+    if (stored === "accepted") {
+      consent.value = "accepted";
+    }
+  } catch {
+    // localStorage might be unavailable (e.g., in private mode); fail open
+  } finally {
+    hydrated.value = true;
+  }
 });
 
 const isVisible = computed(() => consent.value !== "accepted");
 
 const accept = () => {
   consent.value = "accepted";
+
+  try {
+    localStorage.setItem("hq-cookie-consent", "accepted");
+  } catch {
+    // Ignore storage errors; consent is still applied in-memory
+  }
 };
 </script>
 
@@ -22,7 +39,7 @@ const accept = () => {
     leave-to-class="opacity-0 translate-y-3 scale-95"
   >
     <div
-      v-if="isVisible"
+      v-if="hydrated && isVisible"
       class="fixed right-4 bottom-4 ml-4 z-50 flex justify-center pointer-events-none"
     >
       <div
