@@ -78,11 +78,5 @@ export default defineNuxtConfig({
       routes: ["/rss.xml"],
       crawlLinks: true,
     },
-    publicAssets: [
-      {
-        dir: "node_modules/@le-pepe/snow-effect/dist/esm",
-        baseURL: "/_nuxt",
-      },
-    ],
   },
 });
