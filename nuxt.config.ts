@@ -79,9 +79,11 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
-  router: {
-    options: {
-      strict: true,
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: "remove",
+      },
     },
   },
 });
