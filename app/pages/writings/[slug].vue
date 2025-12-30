@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
+const slug = route.params.slug as string;
+
 const { data: page } = await useAsyncData(route.path, () =>
   queryCollection("writing").path(route.path).first()
 );
@@ -11,7 +13,6 @@ useSeoMeta({
   ogDescription: page.value?.description,
 });
 
-const slug = route.path.split('/').at(-1);
 const activeId = ref<string | null>(null);
 let observer: IntersectionObserver | null = null;
 
