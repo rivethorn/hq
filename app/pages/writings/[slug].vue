@@ -1,9 +1,10 @@
 <script setup lang="ts">
+  import { withoutTrailingSlash } from "ufo";
 const route = useRoute();
-const slug = route.params.slug as string;
+const slug = computed(() => withoutTrailingSlash(String(route.params.slug)));
 
 const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection("writing").path(route.path).first()
+  queryCollection("writing").path(withoutTrailingSlash(String(route.path))).first()
 );
 
 useSeoMeta({
