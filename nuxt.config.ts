@@ -79,4 +79,9 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
+  router: {
+    options: {
+      strict: false,
+    },
+  },
 });
