@@ -5,7 +5,9 @@ const { data: posts, error } = await useAsyncData("posts", () =>
   queryCollection("writing").order("date", "DESC").limit(5).all()
 );
 
-if (!posts.value || !error.value) createError({ statusCode: 404 });
+if (!posts.value || error.value) {
+  throw createError({ statusCode: 404 });
+}
 </script>
 
 <template>
