@@ -8,8 +8,6 @@ const { enableSnowEffect } = useChristmasSeason();
 const { data: posts, error } = await useAsyncData("posts", () =>
   queryCollection("writing").order("date", "DESC").limit(5).all()
 );
-
-if (!posts.value || !error.value) createError({ statusCode: 404 });
 </script>
 
 <template>
@@ -24,7 +22,8 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
       the intersection of creativity and engineering. I'll also just rant
       sometimes.
     </h3>
-    <div class="-mt-8">
+    <div v-if="!posts?.values">Loading posts…</div>
+    <div v-else class="-mt-8">
       <NuxtLink
         v-for="(post, index) in posts"
         :key="post.title"
