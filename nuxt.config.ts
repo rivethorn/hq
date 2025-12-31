@@ -2,9 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
+  llms: {
+    domain: "https://rivethorn.is-a.dev",
+    title: "Rivethorn's HQ",
+    description:
+      "Thoughts and essays on programming and technology, like Vue.JS, Nuxt, and Rust",
+  },
   content: {
     build: {
       markdown: {
