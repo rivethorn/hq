@@ -133,7 +133,7 @@ onUnmounted(() => {
         </template>
       </UAccordion>
     </div>
-    <NuxtImg :src="`/posts/${slug}.png`" class="size-full mt-12 rounded-lg w-[95%] lg:w-[85%] mx-auto" fit="cover"
+    <NuxtImg :src="`/posts/${slug}.png`" class="pointer-events-none size-full mt-12 rounded-lg w-[95%] lg:w-[85%] mx-auto" fit="cover"
       :alt="slug" />
     <base target="_blank">
     <ContentRenderer :value="page!" class="prose mb-12 lg:px-2" />

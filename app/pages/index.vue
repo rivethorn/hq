@@ -5,8 +5,8 @@ definePageMeta({
 
 const { enableSnowEffect } = useChristmasSeason();
 
-const { data: posts, error } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").limit(5).all()
+const { data: posts } = await useAsyncData("posts", () =>
+  queryCollection("writing").order("date", "DESC").limit(5).all(),
 );
 </script>
 
@@ -33,7 +33,7 @@ const { data: posts, error } = await useAsyncData("posts", () =>
         :style="{ '--stagger': index }"
       >
         <CrossedDiv
-          class-name="p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
+          class-name="pointer-events-none p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
     transition-all duration-300
     ease-[cubic-bezier(0.22,1,0.36,1)]
     hover:shadow-xl hover:shadow-black/5"
