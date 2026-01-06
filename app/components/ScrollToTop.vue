@@ -43,7 +43,7 @@ onUnmounted(() => {
             size="lg"
             color="neutral"
             variant="subtle"
-            class="rounded-full shadow-lg lg:p-2.5 hover:shadow-xl transition-transform hover:-translate-y-0.5"
+            class="rounded-full shadow-lg text-muted lg:p-2.5 hover:shadow-xl transition-transform hover:-translate-y-0.5"
             @click="scrollToTop"
           />
         </UTooltip>
