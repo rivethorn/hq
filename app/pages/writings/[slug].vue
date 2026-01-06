@@ -138,6 +138,5 @@ onUnmounted(() => {
     <base target="_blank">
     <ContentRenderer :value="page!" class="prose mb-12 lg:px-2" />
     </base>
-    <ScrollToTop />
   </article>
 </template>

@@ -71,6 +71,8 @@ onMounted(() => {
 
       <NuxtRouteAnnouncer />
       <NuxtPage class="max-w-[92%] lg:w-5xl mx-auto" />
+
+      <ScrollToTop />
     </UMain>
 
     <Footer />
