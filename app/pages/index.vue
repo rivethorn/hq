@@ -15,7 +15,7 @@ const { data: posts } = await useAsyncData("posts", () =>
     <ClientOnly>
       <Meteors v-if="!enableSnowEffect" :number="30" class="-z-10" />
     </ClientOnly>
-    <h1 class="subtle-highlight text-5xl font-black mb-6">Oh hey, welcome!</h1>
+    <h1 class="text-5xl font-black mb-6">Oh hey, welcome!</h1>
     <h3 class="text-xl font-medium text-muted">
       Glad to see you here, I'm Hassan. <br />
       This is where I write my thoughts & essays on programming, technology, and
@@ -51,7 +51,7 @@ const { data: posts } = await useAsyncData("posts", () =>
               <span>·</span>
               <span>{{ post.tag }}</span>
             </div>
-            <h2 class="subtle-highlight text-3xl font-bold">
+            <h2 class="text-3xl font-bold">
               {{ post.title }}
             </h2>
             <span class="text-muted text-base lg:text-xl">{{
@@ -81,13 +81,3 @@ const { data: posts } = await useAsyncData("posts", () =>
     </div>
   </div>
 </template>
-
-<style scoped>
-.subtle-highlight {
-  &:where(.dark, .dark *) {
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  }
-
-  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-</style>
