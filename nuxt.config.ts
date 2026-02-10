@@ -34,7 +34,6 @@ export default defineNuxtConfig({
     disableTransition: false
   },
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Rivethorn's HQ",
       htmlAttrs: {
