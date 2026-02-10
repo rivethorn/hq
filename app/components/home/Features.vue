@@ -22,7 +22,8 @@ const features: Feature[] = [
 </script>
 
 <template>
-  <div class="grid md:grid-cols-2 gap-4 mb-18">
+  <h4 class="text-3xl font-black mb-8">My Services</h4>
+  <div class="grid md:grid-cols-2 gap-4 mb-24">
     <Motion
       v-for="(feature, index) in features"
       :key="feature.title"

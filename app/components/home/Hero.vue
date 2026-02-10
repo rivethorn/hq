@@ -24,12 +24,12 @@
       :transition="{ duration: 0.5, delay: 0.15 }"
     >
       <p
-        class="text-base lg:text-xl font-medium text-toned mb-18 leading-relaxed"
+        class="text-lg lg:text-xl font-medium text-toned mb-18 leading-relaxed"
       >
-        I’m Hassan, a software engineer and full-stack developer who enjoys
-        building stuff — from full-fledged, beautiful websites that run like
-        butter; to small, focused tools and powerful command-line utilities that
-        get the job done without unnecessary complexity.
+        I’m Hassan aka. Rivethorn, a software engineer and full-stack developer
+        who enjoys building stuff — from full-fledged, beautiful websites that
+        run like butter; to small, focused tools and powerful command-line
+        utilities that get the job done without unnecessary complexity.
       </p>
     </Motion>
   </UPageCard>

@@ -4,11 +4,11 @@
     :in-view="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.5 }"
     :in-view-options="{ once: true }"
-    class="mb-12"
+    class="mb-18"
   >
     <UPageCard class="lg:p-10" variant="naked">
       <p
-        class="text-base lg:text-xl font-medium text-toned mb-8 leading-relaxed"
+        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
       >
         Beyond code, I’m also documenting how I think and build — from deep
         dives into Rust to Nuxt project walkthroughs — and sharing the process
@@ -17,7 +17,7 @@
         systems: it’s about the craft, not the bells and whistles.
       </p>
       <p
-        class="text-base lg:text-xl font-medium text-toned mb-8 leading-relaxed"
+        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
       >
         When I’m not writing code, I’m learning something new, tinkering with
         systems, or planning the next project. I try to approach problems the
@@ -25,7 +25,7 @@
         explore until the right solution reveals itself.
       </p>
       <p
-        class="text-base lg:text-xl font-medium text-toned mb-8 leading-relaxed"
+        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
       >
         If you like thoughtful software, clear explanations, and projects built
         with intention, hit me up; we can be good friends!
