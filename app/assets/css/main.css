@@ -72,7 +72,7 @@
 }
 
 .prose code {
-  @apply rounded bg-muted py-0.5 text-sm lg:text-base lg:font-medium;
+  @apply rounded leading-relaxed bg-muted py-0.5 text-sm lg:text-base lg:font-medium;
   font-family: "IBM Plex Mono";
 }
 
