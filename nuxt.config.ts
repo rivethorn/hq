@@ -1,3 +1,5 @@
+import { W } from "vue-router/dist/index-Cu9B0wDz.mjs";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -66,6 +68,20 @@ export default defineNuxtConfig({
         {
           rel: "apple-touch-icon",
           href: "/logo.png",
+        },
+        {
+          rel: "icon",
+          href: "/favicon-light.ico",
+        },
+        {
+          rel: "icon",
+          href: "/favicon-light.ico",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          rel: "icon",
+          href: "/favicon-dark.ico",
+          media: "(prefers-color-scheme: dark)"
         },
       ],
     },
