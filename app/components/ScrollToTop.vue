@@ -36,17 +36,15 @@ onUnmounted(() => {
       leave-to-class="opacity-0 translate-y-3 scale-95"
     >
       <div v-if="isVisible">
-        <UTooltip text="Scroll to top" :delay-duration="0">
-          <UButton
-            icon="lucide-chevron-up"
-            aria-label="Scroll to top"
-            size="lg"
-            color="neutral"
-            variant="subtle"
-            class="rounded-full shadow-lg text-muted lg:p-2.5 hover:shadow-xl transition-transform hover:-translate-y-0.5"
-            @click="scrollToTop"
-          />
-        </UTooltip>
+        <UButton
+          icon="lucide-chevron-up"
+          aria-label="Scroll to top"
+          size="lg"
+          color="neutral"
+          variant="subtle"
+          class="rounded-full shadow-lg text-muted lg:p-2.5 hover:shadow-xl transition-transform hover:-translate-y-0.5"
+          @click="scrollToTop"
+        />
       </div>
     </Transition>
   </div>
