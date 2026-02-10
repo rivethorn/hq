@@ -21,6 +21,8 @@ const { enableSnowEffect } = useChristmasSeason();
     <HomeAbout />
 
     <HomeBlogs />
+
+    <HomeCTA />
   </div>
 </template>
 
