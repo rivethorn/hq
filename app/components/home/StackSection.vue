@@ -20,7 +20,7 @@ const hassan = {
   >
     <UContainer class="py-2">
       <div class="max-w-3xl mx-auto space-y-12">
-        <MDC :value="md" />
+        <MDC :value="md" class="prose" />
       </div>
     </UContainer>
   </Motion>
