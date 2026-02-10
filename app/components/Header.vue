@@ -21,12 +21,12 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UHeader mode="slideover" :ui="{ root: ' border-accented' }">
+  <UHeader mode="slideover" :ui="{ root: 'border-accented' }">
     <template #title>
-      <div class="inline-flex gap-2.5 group">
+      <div class="inline-flex gap-2.5 group items-center">
         <NuxtImg
-          src="logo-trans.png"
-          class="light:invert group-hover:opacity-60 transition-opacity size-7"
+          src="logo.svg"
+          class="dark:invert group-hover:opacity-60 transition-opacity size-12"
         />
         <h1 class="hidden lg:block group-hover:text-muted transition-colors">
           Rivethorn's HQ
