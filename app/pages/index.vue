@@ -6,78 +6,109 @@ definePageMeta({
 const { enableSnowEffect } = useChristmasSeason();
 
 const { data: posts } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").limit(5).all(),
+  queryCollection("writing").order("date", "DESC").limit(3).all(),
 );
 </script>
 
 <template>
-  <div class="flex flex-col items-start justify-center gap-10 py-20">
+  <div class="flex flex-col items-start justify-center gap-1 py-20">
     <ClientOnly>
       <Meteors v-if="!enableSnowEffect" :number="30" class="-z-10" />
     </ClientOnly>
-    <h1 class="text-5xl font-black mb-6">Oh hey, welcome!</h1>
-    <h3 class="text-xl font-medium text-muted">
-      Glad to see you here, I'm Hassan. <br />
-      This is where I write my thoughts & essays on programming, technology, and
-      the intersection of creativity and engineering. I'll also just rant
-      sometimes.
-    </h3>
-    <div v-if="!posts?.values">Loading posts…</div>
-    <div v-else class="-mt-8">
-      <NuxtLink
-        v-for="(post, index) in posts"
-        :key="post.title"
-        :to="post.path"
-        class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] bg-elevated/10 shadow-md transition-all hover:bg-accented/30 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
-        :aria-label="`Read ${post.title}`"
-        :style="{ '--stagger': index }"
+    <UPageCard class="lg:p-10" variant="naked">
+      <Motion
+        :initial="{ opacity: 0, y: 20 }"
+        :animate="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 0.5 }"
       >
-        <CrossedDiv
-          class-name="pointer-events-none p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
-    transition-all duration-300
-    ease-[cubic-bezier(0.22,1,0.36,1)]
-    hover:shadow-xl hover:shadow-black/5"
-        >
+        <div class="inline-flex items-center gap-6 -mt-4 mb-4">
           <NuxtImg
-            :src="`posts/${post.path.split('/').at(-1)}.png`"
-            class="flex rounded-md h-fit lg:max-w-2/5"
-            fit="contain"
+            src="profile.jpeg"
+            class="rounded-full size-15 lg:size-20 border-2 border-accented"
           />
-          <div class="flex flex-col gap-3 lg:min-w-3/5">
-            <div class="flex gap-3 text-muted text-sm lg:text-base">
-              <span>{{ new Date(post.date).toDateString() }}</span>
-              <span>·</span>
-              <span>{{ post.ttr }}</span>
-              <span>·</span>
-              <span>{{ post.tag }}</span>
-            </div>
-            <h2 class="text-3xl font-bold">
-              {{ post.title }}
-            </h2>
-            <span class="text-muted text-base lg:text-xl">{{
-              post.description
-            }}</span>
-            <div
-              class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4"
+          <h1 class="text-4xl lg:text-5xl font-black">
+            Oh hey, Welcome!<span className="inline-block animate-wave m-2"
+              >👋</span
             >
-              <span class="group-hover:text-muted">Read more</span>
-              <UIcon
-                name="lucide-arrow-right"
-                class="size-5 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </div>
-          </div>
-        </CrossedDiv>
-      </NuxtLink>
-
-      <UButton
-        label="See more"
-        color="neutral"
-        to="/writings"
-        size="xl"
-        class="text-lg rounded-md px-4 mt-5 transition-all hover:-translate-y-0.5 active:translate-y-1 dark:text-2xl"
-        variant="outline"
-      />
-    </div>
+          </h1>
+        </div>
+      </Motion>
+      <Motion
+        :initial="{ opacity: 0, y: 20 }"
+        :animate="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 0.5, delay: 0.15 }"
+      >
+        <p
+          class="text-base lg:text-xl font-medium text-toned mb-8 leading-relaxed"
+        >
+          I’m Hassan, a software engineer and full-stack developer who enjoys
+          building stuff — from full-fledged, beautiful websites that run like
+          butter; to small, focused tools and powerful command-line utilities
+          that get the job done without unnecessary complexity.
+        </p>
+      </Motion>
+    </UPageCard>
+    <Motion
+      :initial="{ opacity: 0, y: 20 }"
+      :animate="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.5 }"
+      :in-view-options="{ once: true }"
+    >
+      <StackSection />
+    </Motion>
   </div>
 </template>
+
+<style lang="css" scoped>
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wave {
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+p {
+  font-family: "IBM Plex Sans";
+}
+</style>
