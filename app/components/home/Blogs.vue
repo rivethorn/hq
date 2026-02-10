@@ -1,0 +1,49 @@
+<script setup lang="ts">
+const { data: posts } = await useAsyncData("posts", () =>
+  queryCollection("writing").order("date", "DESC").limit(3).all(),
+);
+
+interface BlogFeature {
+  title: string;
+  description: string;
+  to: string;
+}
+
+let blogs: BlogFeature[] = [];
+
+posts.value?.map((v) => {
+  blogs.push({ title: v.title, description: v.description, to: v.path });
+});
+</script>
+
+<template>
+  <h4 class="text-3xl font-black mb-8">My latest writings</h4>
+  <div class="grid md:grid-cols-1 gap-8 mb-18">
+    <Motion
+      v-for="(blog, index) in blogs"
+      :key="blog.title"
+      :initial="{ opacity: 0, y: 16 }"
+      :in-view="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.4, delay: index * 0.05 }"
+      :in-view-options="{ once: true }"
+    >
+      <UPageCard
+        :title="blog.title"
+        :description="blog.description"
+        :to="blog.to"
+        variant="subtle"
+        orientation="horizontal"
+        :ui="{
+          title: 'mb-4',
+          leadingIcon: 'size-6',
+        }"
+      >
+        <NuxtImg
+          :src="`posts/${blog.to.split('/').at(-1)}.png`"
+          class="flex rounded-md"
+          fit="contain"
+        />
+      </UPageCard>
+    </Motion>
+  </div>
+</template>

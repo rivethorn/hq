@@ -4,10 +4,6 @@ definePageMeta({
 });
 
 const { enableSnowEffect } = useChristmasSeason();
-
-const { data: posts } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").limit(3).all(),
-);
 </script>
 
 <template>
@@ -23,6 +19,8 @@ const { data: posts } = await useAsyncData("posts", () =>
     <HomeFeatures />
 
     <HomeAbout />
+
+    <HomeBlogs />
   </div>
 </template>
 
