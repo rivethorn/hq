@@ -19,6 +19,8 @@ const { data: posts } = await useAsyncData("posts", () =>
     <HomeHero />
 
     <HomeStackSection />
+
+    <HomeFeatures />
   </div>
 </template>
 
