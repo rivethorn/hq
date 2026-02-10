@@ -57,15 +57,6 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
           </div>
         </CrossedDiv>
       </NuxtLink>
-
-      <UButton
-        label="See more"
-        color="neutral"
-        to="/writings"
-        size="xl"
-        class="text-lg rounded-md px-4 mt-5 transition-all hover:-translate-y-0.5 active:translate-y-1 dark:text-2xl"
-        variant="outline"
-      />
     </div>
   </div>
 </template>
