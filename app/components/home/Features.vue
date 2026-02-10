@@ -36,6 +36,12 @@ const features: Feature[] = [
         :description="feature.description"
         :icon="feature.icon"
         spotlight
+        variant="subtle"
+        class="bg-accented"
+        :ui="{
+          title: 'mb-4',
+          leadingIcon: 'size-6',
+        }"
       />
     </Motion>
   </div>
