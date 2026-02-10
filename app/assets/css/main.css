@@ -1,3 +1,10 @@
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
 @import "tailwindcss";
 @import "@nuxt/ui";
 
@@ -25,6 +32,7 @@
 
 .dark {
   --ui-primary: #8ec07c;
+  --ui-bg: #09090b;
 }
 
 @theme inline {
@@ -66,4 +74,26 @@
 .prose code {
   @apply rounded bg-muted py-0.5 text-sm lg:text-base lg:font-medium;
   font-family: "IBM Plex Mono";
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
