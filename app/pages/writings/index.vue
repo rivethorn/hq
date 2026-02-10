@@ -8,10 +8,8 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
 
 <template>
   <div class="flex flex-col items-start justify-center gap-10 py-20">
-    <h1 class="text-5xl font-black mb-6">All Writing</h1>
-    <h3 class="text-xl font-medium text-muted">
-      A complete archive of everything I've written.
-    </h3>
+    <h1 class="text-5xl font-black mb-6">My Writings</h1>
+    <h3 class="text-xl font-medium text-muted">Everything I've written.</h3>
     <div v-if="!posts?.values">Loading posts…</div>
     <div v-else class="-mt-8">
       <NuxtLink
