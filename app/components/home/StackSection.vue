@@ -16,7 +16,7 @@ const hassan = {
     :initial="{ opacity: 0, y: 20 }"
     :animate="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.5, delay: 0.2 }"
-    class="mx-auto w-full h-full"
+    class="mx-auto w-full h-full mb-28"
   >
     <UContainer class="py-2">
       <div class="max-w-3xl mx-auto space-y-12">

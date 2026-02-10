@@ -24,7 +24,7 @@
       :transition="{ duration: 0.5, delay: 0.15 }"
     >
       <p
-        class="text-base lg:text-xl font-medium text-toned mb-8 leading-relaxed"
+        class="text-base lg:text-xl font-medium text-toned mb-18 leading-relaxed"
       >
         I’m Hassan, a software engineer and full-stack developer who enjoys
         building stuff — from full-fledged, beautiful websites that run like
