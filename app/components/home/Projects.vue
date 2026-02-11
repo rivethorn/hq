@@ -12,12 +12,13 @@ interface ProjectsFeature {
   img: string;
 }
 
-const projectsList = projects?.map((v) => ({
-  title: v.title,
-  description: v.description,
-  to: v.url,
-  img: v.image,
-})) || [];
+const projectsList =
+  projects?.map((v) => ({
+    title: v.title,
+    description: v.description,
+    to: v.url,
+    img: v.image,
+  })) || [];
 </script>
 
 <template>
@@ -30,14 +31,7 @@ const projectsList = projects?.map((v) => ({
     >My latest projects</Motion
   >
   <div class="grid md:grid-cols-1 gap-8 mb-18">
-    <Motion
-      v-for="(project, index) in projectsList"
-      :key="project.title"
-      :initial="{ opacity: 0, y: 16 }"
-      :in-view="{ opacity: 1, y: 0 }"
-      :transition="{ duration: 0.4, delay: index * 0.05 }"
-      :in-view-options="{ once: true }"
-    >
+    <div v-for="(project, index) in projectsList">
       <UPageCard
         :title="project.title"
         :description="project.description"
@@ -61,7 +55,7 @@ const projectsList = projects?.map((v) => ({
           ]"
         />
       </UPageCard>
-    </Motion>
+    </div>
     <Motion
       :initial="{ opacity: 0, y: 16 }"
       :in-view="{ opacity: 1, y: 0 }"
