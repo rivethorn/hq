@@ -8,13 +8,13 @@ const items = computed<NavigationMenuItem[]>(() => [
     class: "p-3",
   },
   {
-    label: "Writings",
-    to: "/writings",
+    label: "Projects",
+    to: "/projects",
     class: "p-3",
   },
   {
-    label: "About",
-    to: "/about",
+    label: "Writings",
+    to: "/writings",
     class: "p-3",
   },
 ]);
