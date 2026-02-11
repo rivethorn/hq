@@ -30,7 +30,7 @@
               <span class="text-[#8b4c4a] dark:text-[#a96b69]">=</span>
               <span class="text-[#5a4a3a] dark:text-[#d4be98]">{</span>
             </div>
-            <div class="flex gap-1 whitespace-nowrap">
+            <div class="ml-5 flex gap-1 whitespace-nowrap">
               <!-- <span class="mr-12 text-[#5a4a3a] dark:text-[#d4be98] opacity-80"
                 >2</span
               > -->
@@ -43,7 +43,7 @@
               </span>
               <span class="text-[#5a4a3a] dark:text-[#d4be98]">]</span>,
             </div>
-            <div class="flex gap-1 whitespace-nowrap">
+            <div class="ml-5 flex gap-1 whitespace-nowrap">
               <!-- <span class="mr-12 text-[#5a4a3a] dark:text-[#d4be98] opacity-80"
                 >3</span
               > -->
@@ -56,7 +56,7 @@
               <span class="text-[#6b8860] dark:text-[#89a87d]"> "Go" </span>
               <span class="text-[#5a4a3a] dark:text-[#d4be98]">]</span>,
             </div>
-            <div class="flex gap-1 whitespace-nowrap">
+            <div class="ml-5 flex gap-1 whitespace-nowrap">
               <!-- <span class="mr-12 text-[#5a4a3a] dark:text-[#d4be98] opacity-80"
                 >4</span
               > -->
@@ -68,7 +68,7 @@
               <span class="text-[#6b8860] dark:text-[#89a87d]">"Supabase"</span>
               <span class="text-[#5a4a3a] dark:text-[#d4be98]">]</span>,
             </div>
-            <div class="flex gap-1 whitespace-nowrap">
+            <div class="ml-5 flex gap-1 whitespace-nowrap">
               <!-- <span class="mr-12 text-[#5a4a3a] dark:text-[#d4be98] opacity-80"
                 >5</span
               > -->
