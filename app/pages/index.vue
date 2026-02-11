@@ -1,8 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  ssr: true,
-});
-
 const { enableSnowEffect } = useChristmasSeason();
 </script>
 
