@@ -2,7 +2,8 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: "Space Grotesk", sans-serif;
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
 }
 
 @theme {
@@ -48,7 +49,6 @@
 
 .prose p {
   @apply leading-relaxed text-base lg:text-lg text-default;
-  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
 }
 
@@ -65,8 +65,7 @@
 }
 
 .prose code {
-  @apply rounded leading-relaxed bg-muted py-0.5 text-sm lg:text-base lg:font-medium;
-  font-family: "IBM Plex Mono";
+  @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium;
 }
 
 .page-enter-active,
