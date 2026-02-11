@@ -1,0 +1,5 @@
+title: GitHub OAuth for Rust
+description: A very simple library for Rust client applications that need to perform OAuth authorization against GitHub.
+image: /docsdotrs.svg
+url: https://github.com/rivethorn/ghoauth-rs
+date: "2026-01-07"
