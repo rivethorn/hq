@@ -13,10 +13,6 @@ export default defineContentConfig({
         date: z.string(),
       }),
     }),
-    content: defineCollection({
-      type: "page",
-      source: "about.md",
-    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects/*.yml',
