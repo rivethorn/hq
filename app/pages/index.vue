@@ -1,12 +1,14 @@
 <script setup lang="ts">
 const { enableSnowEffect } = useChristmasSeason();
 
-const { data: posts } = await useAsyncData("posts-latest", () =>
-  queryCollection("writing").order("date", "DESC").limit(2).all(),
+const { data: posts, pending: postPending } = await useAsyncData(
+  "posts-latest",
+  () => queryCollection("writing").order("date", "DESC").limit(2).all(),
 );
 
-const { data: projects } = await useAsyncData("projects-latest", () =>
-  queryCollection("projects").order("date", "DESC").limit(2).all(),
+const { data: projects, pending: projectPending } = await useAsyncData(
+  "projects-latest",
+  () => queryCollection("projects").order("date", "DESC").limit(2).all(),
 );
 </script>
 
@@ -24,9 +26,9 @@ const { data: projects } = await useAsyncData("projects-latest", () =>
 
     <HomeAbout />
 
-    <HomeProjects :projects="projects ?? []" />
+    <HomeProjects :projects="projects" :is-loading="projectPending" />
 
-    <HomeBlogs :posts="posts ?? []" />
+    <HomeBlogs :posts="posts" :is-loading="postPending" />
 
     <HomeCTA />
   </div>

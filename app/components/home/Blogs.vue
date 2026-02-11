@@ -3,6 +3,7 @@ import type { WritingCollectionItem } from "@nuxt/content";
 
 const { posts } = defineProps<{
   posts: WritingCollectionItem[] | undefined;
+  isLoading: boolean;
 }>();
 
 interface BlogFeature {
@@ -27,7 +28,24 @@ posts?.map((v) => {
     class="text-3xl font-black mb-8"
     >My latest writings</Motion
   >
-  <div class="grid md:grid-cols-1 gap-8 mb-18">
+  <Motion
+    :initial="{ opacity: 0, y: 16 }"
+    :in-view="{ opacity: 1, y: 0 }"
+    :transition="{ duration: 0.4 }"
+    :in-view-options="{ once: true }"
+    v-if="isLoading"
+    class="flex items-center w-full"
+  >
+    <div
+      class="my-12 text-center flex flex-col gap-4 justify-center items-center w-full"
+    >
+      <div
+        class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"
+      ></div>
+      <p class="mt-4 text-toned">Loading projects...</p>
+    </div>
+  </Motion>
+  <div v-else class="grid md:grid-cols-1 gap-8 mb-18">
     <Motion
       v-for="(blog, index) in blogs"
       :key="blog.title"
