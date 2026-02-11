@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData("posts-latest", () =>
-  queryCollection("writing").order("date", "DESC").limit(2).all(),
-);
+import type { WritingCollectionItem } from "@nuxt/content";
+
+const { posts } = defineProps<{
+  posts: WritingCollectionItem[] | undefined;
+}>();
 
 interface BlogFeature {
   title: string;
@@ -11,7 +13,7 @@ interface BlogFeature {
 
 let blogs: BlogFeature[] = [];
 
-posts.value?.map((v) => {
+posts?.map((v) => {
   blogs.push({ title: v.title, description: v.description, to: v.path });
 });
 </script>

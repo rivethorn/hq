@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData("projects-latest", () =>
-  queryCollection("projects").order("date", "DESC").limit(2).all(),
-);
+import type { ProjectsCollectionItem } from "@nuxt/content";
+
+const { projects } = defineProps<{
+  projects: ProjectsCollectionItem[] | undefined;
+}>();
 
 interface ProjectsFeature {
   title: string;
@@ -10,10 +12,10 @@ interface ProjectsFeature {
   img: string;
 }
 
-let projects: ProjectsFeature[] = [];
+let projectsList: ProjectsFeature[] = [];
 
-posts.value?.map((v) => {
-  projects.push({
+projects?.map((v) => {
+  projectsList.push({
     title: v.title,
     description: v.description,
     to: v.url,
@@ -33,7 +35,7 @@ posts.value?.map((v) => {
   >
   <div class="grid md:grid-cols-1 gap-8 mb-18">
     <Motion
-      v-for="(project, index) in projects"
+      v-for="(project, index) in projectsList"
       :key="project.title"
       :initial="{ opacity: 0, y: 16 }"
       :in-view="{ opacity: 1, y: 0 }"
