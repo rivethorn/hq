@@ -22,7 +22,14 @@ const features: Feature[] = [
 </script>
 
 <template>
-  <h4 class="text-3xl font-black mb-8">My Services</h4>
+  <Motion
+    :initial="{ opacity: 0, y: 16 }"
+    :in-view="{ opacity: 1, y: 0 }"
+    :transition="{ duration: 0.4 }"
+    :in-view-options="{ once: true }"
+    class="text-3xl font-black mb-8"
+    >My Services</Motion
+  >
   <div class="grid md:grid-cols-2 gap-4 mb-24">
     <Motion
       v-for="(feature, index) in features"
