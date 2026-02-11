@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: posts, error } = await useAsyncData("posts", () =>
+const { data: posts, error } = await useAsyncData("posts-all", () =>
   queryCollection("writing").order("date", "DESC").all(),
 );
 
