@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { data: posts, error } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").all()
+const { data: posts, error } = await useAsyncData("posts-all", () =>
+  queryCollection("writing").order("date", "DESC").all(),
 );
 
 if (!posts.value || !error.value) createError({ statusCode: 404 });
@@ -8,44 +8,69 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
 
 <template>
   <div class="flex flex-col items-start justify-center gap-10 py-20">
-    <h1 class="text-5xl font-black mb-6">All Writing</h1>
-    <h3 class="text-xl font-medium text-muted">
-      A complete archive of everything I've written.
-    </h3>
-    <div class="mx-auto min-w-full">
-      <span class="text-lg font-semibold text-toned">{{
-        new Date(posts!.at(0)!.date).getFullYear()
-      }}</span>
-      <NuxtLink
+    <Motion
+      :initial="{ opacity: 0, y: 20 }"
+      :in-view="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.3 }"
+      :in-view-options="{ once: true }"
+    >
+      <h1 class="text-5xl font-black mb-6">My Writings</h1>
+      <h3 class="text-xl font-medium text-muted">Everything I've written.</h3>
+    </Motion>
+    <div v-if="!posts?.values">Loading posts…</div>
+    <div v-else class="-mt-8">
+      <Motion
         v-for="(post, index) in posts"
         :key="post.title"
-        :to="post.path"
-        class="group flex flex-col gap-3.5 my-8 active:scale-[0.98] transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
-        :style="{ '--stagger': index }"
+        :initial="{ opacity: 0, y: 20 }"
+        :in-view="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 0.5, delay: index * 0.05 }"
+        :in-view-options="{ once: true }"
       >
-        <UCard
-          class="h-full flex flex-col gap-3.5 transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:bg-accented/10"
+        <NuxtLink
+          :to="post.path"
+          class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] bg-elevated/10 shadow-md transition-all hover:bg-accented/30 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
+          :aria-label="`Read ${post.title}`"
+          :style="{ '--stagger': index }"
         >
-          <div
-            class="flex flex-col lg:flex-row gap-3 items-center justify-between text-muted text-sm lg:text-base"
+          <CrossedDiv
+            class-name="pointer-events-none p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
+            transition-all duration-300
+            ease-[cubic-bezier(0.22,1,0.36,1)]
+            hover:shadow-xl hover:shadow-black/5"
           >
-            <span
-              class="text-lg font-semibold min-w-fit text-highlighted inline-flex w-full justify-start"
-              >{{ post.title }}</span
-            >
-            <div class="inline-flex w-full justify-start lg:justify-end">
-              <span class="min-w-fit">{{
-                new Date(post.date).toLocaleDateString("default", {
-                  month: "short",
-                  day: "2-digit",
-                })
+            <NuxtImg
+              :src="`posts/${post.path.split('/').at(-1)}.png`"
+              class="flex rounded-md h-fit lg:max-w-2/5"
+              fit="contain"
+            />
+            <div class="flex flex-col gap-3 lg:min-w-3/5">
+              <div class="flex gap-3 text-muted text-sm lg:text-base">
+                <span>{{ new Date(post.date).toDateString() }}</span>
+                <span>·</span>
+                <span>{{ post.ttr }}</span>
+                <span>·</span>
+                <span>{{ post.tag }}</span>
+              </div>
+              <h2 class="text-3xl font-bold">
+                {{ post.title }}
+              </h2>
+              <span class="text-muted text-base lg:text-xl">{{
+                post.description
               }}</span>
-              <span class="mx-2.5">·</span>
-              <span class="min-w-fit">{{ post.ttr }}</span>
+              <div
+                class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4"
+              >
+                <span class="group-hover:text-muted">Read more</span>
+                <UIcon
+                  name="lucide-arrow-right"
+                  class="size-5 transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </div>
             </div>
-          </div>
-        </UCard>
-      </NuxtLink>
+          </CrossedDiv>
+        </NuxtLink>
+      </Motion>
     </div>
   </div>
 </template>

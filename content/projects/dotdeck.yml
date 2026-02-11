@@ -1,0 +1,5 @@
+title: DotDeck
+description: "DotDeck is a dotfile manager: it keeps your personal configuration files (shell configs, editor settings, Git configs, etc.) version‑controlled in one place, and then symlinks them into the right spots on your system."
+image: /deck.png
+url: https://github.com/rivethorn/DotDeck
+date: "2025-04-16"

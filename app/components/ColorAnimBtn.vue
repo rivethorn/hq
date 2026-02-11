@@ -28,7 +28,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -48,7 +48,7 @@ const startViewTransition = (event: MouseEvent) => {
         duration: duration,
         easing: "cubic-bezier(.76,.32,.29,.99)",
         pseudoElement: "::view-transition-new(root)",
-      }
+      },
     );
   });
 };
@@ -70,7 +70,7 @@ const startViewTransition = (event: MouseEvent) => {
         :icon="`i-tabler-${nextTheme === 'dark' ? 'sun' : nextTheme === 'light' ? 'device-desktop' : 'moon'}`"
         color="neutral"
         variant="ghost"
-        @click="switchTheme"
+        @click="startViewTransition"
       />
     </UTooltip>
     <template #fallback>

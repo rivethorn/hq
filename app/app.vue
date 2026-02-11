@@ -52,7 +52,7 @@ onMounted(() => {
 
     <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
       <div
-        class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-2 lg:opacity-3"
+        class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-1"
       />
     </div>
 

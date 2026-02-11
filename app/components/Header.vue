@@ -3,13 +3,13 @@ import type { NavigationMenuItem } from "@nuxt/ui";
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: "Blog",
+    label: "Home",
     to: "/",
     class: "p-3",
   },
   {
-    label: "About",
-    to: "/about",
+    label: "Projects",
+    to: "/projects",
     class: "p-3",
   },
   {
@@ -21,17 +21,14 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UHeader mode="slideover">
+  <UHeader mode="slideover" :ui="{ root: 'border-accented' }">
     <template #title>
-      <div class="inline-flex gap-2.5 group">
+      <div class="inline-flex gap-2.5 group items-center">
         <NuxtImg
-          src="logo-trans.png"
-          class="light:invert group-hover:opacity-60 transition-opacity size-7"
+          src="logo.svg"
+          class="dark:invert group-hover:opacity-60 transition-opacity size-12"
         />
-        <h1 class="hidden lg:block group-hover:text-muted transition-colors">
-          Rivethorn's HQ
-        </h1>
-        <h1 class="lg:hidden group-hover:text-muted transition-colors">RHQ</h1>
+        <h1 class="group-hover:text-muted transition-colors">RHQ</h1>
       </div>
     </template>
 

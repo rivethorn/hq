@@ -2,7 +2,8 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: "Space Grotesk", sans-serif;
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
 }
 
 @theme {
@@ -14,17 +15,14 @@
 }
 
 :root {
-  --ui-header-height: --spacing(18);
+  --ui-header-height: --spacing(16);
   --ui-container: var(--header-width);
   --ui-primary: #427b58;
 }
 
-.light {
-  --ui-bg: #f8f3ee;
-}
-
 .dark {
   --ui-primary: #8ec07c;
+  --ui-bg: #09090b;
 }
 
 @theme inline {
@@ -47,7 +45,6 @@
 
 .prose p {
   @apply leading-relaxed text-base lg:text-lg text-default;
-  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
 }
 
@@ -64,6 +61,27 @@
 }
 
 .prose code {
-  @apply rounded bg-muted py-0.5 text-sm lg:text-base lg:font-medium;
-  font-family: "IBM Plex Mono";
+  @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

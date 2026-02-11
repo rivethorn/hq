@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms", "motion-v/nuxt"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
   llms: {
@@ -64,6 +64,20 @@ export default defineNuxtConfig({
         {
           rel: "apple-touch-icon",
           href: "/logo.png",
+        },
+        {
+          rel: "icon",
+          href: "/favicon-light.ico",
+        },
+        {
+          rel: "icon",
+          href: "/favicon-light.ico",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          rel: "icon",
+          href: "/favicon-dark.ico",
+          media: "(prefers-color-scheme: dark)"
         },
       ],
     },

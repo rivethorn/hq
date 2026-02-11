@@ -1,0 +1,6 @@
+title: Hermes
+description: A CLI tool for adding and removing Markdown files to and from a Supabase bucket. I used it for my blog site, you can use it for whatever you want.
+image: /hermes.png
+url: https://github.com/rivethorn/hermes-md
+story: /writings/road-to-here
+date: "2025-12-14"
