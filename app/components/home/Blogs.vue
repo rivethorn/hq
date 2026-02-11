@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { data: posts } = await useAsyncData("posts", () =>
-  queryCollection("writing").order("date", "DESC").limit(3).all(),
+const { data: posts } = await useAsyncData("posts-latest", () =>
+  queryCollection("writing").order("date", "DESC").limit(2).all(),
 );
 
 interface BlogFeature {
@@ -51,6 +51,21 @@ posts.value?.map((v) => {
           fit="contain"
         />
       </UPageCard>
+    </Motion>
+    <Motion
+      :initial="{ opacity: 0, y: 16 }"
+      :in-view="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.4 }"
+      :in-view-options="{ once: true }"
+      class="flex justify-end"
+    >
+      <UButton
+        label="Explore My Writings"
+        variant="subtle"
+        to="/writings"
+        size="xl"
+        class="min-w-52 flex justify-center"
+      />
     </Motion>
   </div>
 </template>
