@@ -93,13 +93,13 @@ onUnmounted(() => {
         </UCard>
       </aside>
       <Motion
-      :initial="{ opacity: 0, y: 40 }"
-    :in-view="{ opacity: 1, y: 0 }"
-    :transition="{ duration: 0.3 }">
+          :initial="{ opacity: 0, y: 40 }"
+          :in-view="{ opacity: 1, y: 0 }"
+          :transition="{ duration: 0.3 }">
         <UButton @click="$router.back()" variant="link" color="neutral" size="xl"
           class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-primary/80">
           <UIcon name="lucide-arrow-left" class="size-4" />
-          <span>Go Home</span>
+          <span>Go Back</span>
         </UButton>
         <div class="flex flex-col gap-6 mt-8">
           <div class="flex gap-3 text-muted text-sm lg:text-base">
