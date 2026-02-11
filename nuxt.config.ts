@@ -1,5 +1,3 @@
-import { W } from "vue-router/dist/index-Cu9B0wDz.mjs";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -31,7 +29,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "system",
     fallback: "dark",
-    disableTransition: false
   },
   app: {
     head: {
