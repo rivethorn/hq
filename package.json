@@ -22,7 +22,7 @@
     "rss": "^1.2.2",
     "typescript": "^5.9.3",
     "vue": "^3.5.28",
-    "vue-router": "^5.0.2"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@types/rss": "^0.0.32"
