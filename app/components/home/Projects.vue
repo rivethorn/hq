@@ -12,16 +12,12 @@ interface ProjectsFeature {
   img: string;
 }
 
-let projectsList: ProjectsFeature[] = [];
-
-projects?.map((v) => {
-  projectsList.push({
-    title: v.title,
-    description: v.description,
-    to: v.url,
-    img: v.image,
-  });
-});
+const projectsList = projects?.map((v) => ({
+  title: v.title,
+  description: v.description,
+  to: v.url,
+  img: v.image,
+})) || [];
 </script>
 
 <template>
