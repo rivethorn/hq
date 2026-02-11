@@ -12,6 +12,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
       :initial="{ opacity: 0, y: 20 }"
       :in-view="{ opacity: 1, y: 0 }"
       :transition="{ duration: 0.3 }"
+      :in-view-options="{ once: true }"
     >
       <h1 class="text-5xl font-black mb-6">My Writings</h1>
       <h3 class="text-xl font-medium text-muted">Everything I've written.</h3>
