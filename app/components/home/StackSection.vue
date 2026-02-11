@@ -19,7 +19,7 @@
             </span>
           </div>
           <div
-            class="space-y-1 font-mono font-semibold overflow-x-auto px-5 py-6 bg-[#f5f3f0] dark:bg-[#232326]"
+            class="space-y-1 font-mono text-sm lg:text-base font-semibold overflow-x-auto px-5 py-6 bg-[#f5f3f0] dark:bg-[#232326]"
           >
             <div class="flex gap-2 whitespace-nowrap">
               <!-- <span class="mr-6 text-[#5a4a3a] dark:text-[#d4be98] opacity-80"
