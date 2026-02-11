@@ -12,7 +12,7 @@
     </template>
   </UFooter>
 
-  <div class="flex justify-center">
+  <div class="hidden lg:flex justify-center">
     <Motion
       :initial="{ opacity: 0, y: 30 }"
       :in-view="{ opacity: 1, y: 0 }"
