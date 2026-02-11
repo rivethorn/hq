@@ -20,10 +20,6 @@
   --ui-primary: #427b58;
 }
 
-.light {
-  --ui-bg: #f8f3ee;
-}
-
 .dark {
   --ui-primary: #8ec07c;
   --ui-bg: #09090b;
