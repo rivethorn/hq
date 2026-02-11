@@ -16,6 +16,8 @@ const { enableSnowEffect } = useChristmasSeason();
 
     <HomeAbout />
 
+    <HomeProjects />
+
     <HomeBlogs />
 
     <HomeCTA />
