@@ -26,7 +26,19 @@ const { data: projects, pending: projectPending } = await useAsyncData(
 
     <HomeAbout />
 
-    <HomeProjects :projects="projects" :is-loading="projectPending" />
+    <Suspense>
+      <HomeProjects :projects="projects" />
+      <template #fallback>
+        <div
+          class="my-12 text-centerf lex flex-col gap-4 justify-center items-center w-full"
+        >
+          <div
+            class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent"
+          ></div>
+          <p class="mt-4 text-toned">Loading projects...</p>
+        </div>
+      </template>
+    </Suspense>
 
     <HomeBlogs :posts="posts" :is-loading="postPending" />
 
