@@ -28,10 +28,7 @@ const items = computed<NavigationMenuItem[]>(() => [
           src="logo.svg"
           class="dark:invert group-hover:opacity-60 transition-opacity size-12"
         />
-        <h1 class="hidden lg:block group-hover:text-muted transition-colors">
-          Rivethorn's HQ
-        </h1>
-        <h1 class="lg:hidden group-hover:text-muted transition-colors">RHQ</h1>
+        <h1 class="group-hover:text-muted transition-colors">RHQ</h1>
       </div>
     </template>
 
