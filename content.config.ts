@@ -17,5 +17,17 @@ export default defineContentConfig({
       type: "page",
       source: "about.md",
     }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects/*.yml',
+      schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        image: z.string().nonempty().editor({ input: 'media' }),
+        url: z.string().nonempty(),
+        story: z.string(),
+        date: z.date()
+      })
+    }),
   },
 });
