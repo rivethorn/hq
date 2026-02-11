@@ -96,7 +96,7 @@ onUnmounted(() => {
       :initial="{ opacity: 0, y: 40 }"
     :in-view="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.3 }">
-        <UButton to="/" variant="link" color="neutral" size="xl"
+        <UButton @click="$router.back()" variant="link" color="neutral" size="xl"
           class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-primary/80">
           <UIcon name="lucide-arrow-left" class="size-4" />
           <span>Go Home</span>
