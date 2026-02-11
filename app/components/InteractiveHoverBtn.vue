@@ -16,7 +16,7 @@ const buttonRef = ref<HTMLButtonElement>();
 <template>
   <NuxtLink
     ref="buttonRef"
-    class="group bg-background relative w-fit cursor-pointer overflow-hidden rounded-lg border p-2 px-6 text-center font-semibold active:scale-95"
+    class="group bg-background relative w-fit cursor-pointer overflow-hidden rounded-lg border p-2 px-6 text-center font-semibold transition-all active:scale-95"
     :class="[props.class]"
     :to="props.to"
   >
