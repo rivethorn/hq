@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  prerender: true,
+});
+
 const { enableSnowEffect } = useChristmasSeason();
 
 const { data: posts, pending: postPending } = await useAsyncData(

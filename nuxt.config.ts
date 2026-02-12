@@ -98,6 +98,9 @@ export default defineNuxtConfig({
       routes: ["/rss.xml", "*"],
       crawlLinks: true,
     },
+    routeRules: {
+      "/": { prerender: true, }
+    }
   },
   experimental: {
     defaults: {
