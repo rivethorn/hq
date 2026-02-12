@@ -12,16 +12,13 @@ interface ProjectsFeature {
   img: string;
 }
 
-let projectsList: ProjectsFeature[] = [];
-
-projects?.map((v) => {
-  projectsList.push({
+const projectsList =
+  projects?.map((v) => ({
     title: v.title,
     description: v.description,
     to: v.url,
     img: v.image,
-  });
-});
+  })) || [];
 </script>
 
 <template>
@@ -31,8 +28,9 @@ projects?.map((v) => {
     :transition="{ duration: 0.4 }"
     :in-view-options="{ once: true }"
     class="text-3xl font-black mb-8"
-    >My latest projects</Motion
   >
+    My latest projects
+  </Motion>
   <div class="grid md:grid-cols-1 gap-8 mb-18">
     <Motion
       v-for="(project, index) in projectsList"

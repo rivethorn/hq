@@ -67,7 +67,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "icon",
-          href: "/favicon-light.ico",
+          href: "/favicon-dark.ico",
         },
         {
           rel: "icon",
@@ -95,9 +95,12 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ["/rss.xml"],
+      routes: ["/rss.xml", "*"],
       crawlLinks: true,
     },
+    routeRules: {
+      "/": { prerender: true, }
+    }
   },
   experimental: {
     defaults: {
