@@ -28,10 +28,18 @@ const projectsList =
     :transition="{ duration: 0.4 }"
     :in-view-options="{ once: true }"
     class="text-3xl font-black mb-8"
-    >My latest projects</Motion
   >
+    My latest projects
+  </Motion>
   <div class="grid md:grid-cols-1 gap-8 mb-18">
-    <div v-for="(project, index) in projectsList">
+    <Motion
+      v-for="(project, index) in projectsList"
+      :key="project.title"
+      :initial="{ opacity: 0, y: 16 }"
+      :in-view="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.4, delay: index * 0.05 }"
+      :in-view-options="{ once: true }"
+    >
       <UPageCard
         :title="project.title"
         :description="project.description"
@@ -55,7 +63,7 @@ const projectsList =
           ]"
         />
       </UPageCard>
-    </div>
+    </Motion>
     <Motion
       :initial="{ opacity: 0, y: 16 }"
       :in-view="{ opacity: 1, y: 0 }"
