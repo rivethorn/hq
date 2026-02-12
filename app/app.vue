@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { Analytics } from "@vercel/analytics/nuxt";
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+
 useHead({
   script: [{ type: "module", src: "https://unpkg.com/@le-pepe/snow-effect" }],
 });
@@ -39,6 +42,8 @@ onMounted(() => {
 
 <template>
   <UApp>
+    <Analytics />
+    <SpeedInsights />
     <NuxtLoadingIndicator color="#e78a4e" />
 
     <ClientOnly>
