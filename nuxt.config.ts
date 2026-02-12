@@ -67,7 +67,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "icon",
-          href: "/favicon-light.ico",
+          href: "/favicon-dark.ico",
         },
         {
           rel: "icon",
