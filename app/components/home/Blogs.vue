@@ -10,13 +10,16 @@ interface BlogFeature {
   title: string;
   description: string;
   to: string;
+  date: string;
 }
 
-const blogs = posts?.map((v) => ({
-  title: v.title,
-  description: v.description,
-  to: v.path,
-})) || [];
+const blogs: BlogFeature[] =
+  posts?.map((v) => ({
+    title: v.title,
+    description: v.description,
+    to: v.path,
+    date: v.date,
+  })) || [];
 </script>
 
 <template>
@@ -58,6 +61,9 @@ const blogs = posts?.map((v) => ({
           leadingIcon: 'size-6',
         }"
       >
+        <template #footer>
+          <span class="text-muted text-sm">{{ blog.date }}</span>
+        </template>
         <NuxtImg
           :src="`posts/${blog.to.split('/').at(-1)}.png`"
           class="flex rounded-md"

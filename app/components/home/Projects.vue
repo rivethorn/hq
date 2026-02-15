@@ -10,14 +10,16 @@ interface ProjectsFeature {
   description: string;
   to: string;
   img: string;
+  date: string;
 }
 
-const projectsList =
+const projectsList: ProjectsFeature[] =
   projects?.map((v) => ({
     title: v.title,
     description: v.description,
     to: v.url,
     img: v.image,
+    date: v.date,
   })) || [];
 </script>
 
@@ -51,6 +53,11 @@ const projectsList =
           leadingIcon: 'size-6',
         }"
       >
+        <template #footer>
+          <span class="text-muted text-sm">{{
+            new Date(project.date).getFullYear()
+          }}</span>
+        </template>
         <NuxtImg
           :src="project.img"
           class="flex rounded-md"
