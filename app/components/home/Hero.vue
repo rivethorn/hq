@@ -10,7 +10,7 @@
           src="profile.jpeg"
           class="rounded-full size-15 lg:size-20 border-2 border-accented"
         />
-        <h1 class="text-4xl lg:text-5xl font-black">
+        <h1 class="text-4xl lg:text-5xl font-black text-shadow-md">
           Oh hey, Welcome!<span className="inline-block animate-wave m-2"
             >👋</span
           >
