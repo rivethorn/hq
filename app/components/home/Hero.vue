@@ -10,13 +10,33 @@
           src="profile.jpeg"
           class="rounded-full size-15 lg:size-20 border-2 border-accented shadow-md"
         />
-        <h1 class="text-4xl lg:text-5xl font-black text-shadow-md">
-          Oh hey, Welcome!<span
-            class="inline-block animate-wave m-2 text-shadow-md"
+        <div class="hidden lg:flex items-center pointer-events-none">
+          <TextPressure
+            class="text-shadow-md"
+            text="Oh hey, Welcome!"
+            font-family="Source Sans 3"
+            font-url="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+            :min-font-size="75"
+            :flex="true"
+            :italic="false"
+            span-class="text-highlighted"
+          >
+          </TextPressure>
+          <span
+            class="text-4xl lg:text-5xl inline-block animate-wave m-2 text-shadow-md"
           >
             👋
           </span>
-        </h1>
+        </div>
+        <div class="lg:hidden">
+          <h1 class="text-4xl font-black text-shadow-md">
+            Oh hey, Welcome!<span
+              class="inline-block animate-wave m-2 text-shadow-md"
+            >
+              👋
+            </span>
+          </h1>
+        </div>
       </div>
     </Motion>
 
