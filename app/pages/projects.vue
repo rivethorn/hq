@@ -55,6 +55,7 @@ if (!projects.value || !error.value) createError({ statusCode: 404 });
                 <UButton
                   label="View Project"
                   :to="project.url"
+                  target="_blank"
                   variant="subtle"
                 />
                 <UButton

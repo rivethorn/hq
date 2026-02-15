@@ -46,6 +46,7 @@ const projectsList: ProjectsFeature[] =
         :title="project.title"
         :description="project.description"
         :to="project.to"
+        target="_blank"
         variant="subtle"
         orientation="horizontal"
         :ui="{
