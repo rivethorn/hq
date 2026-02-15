@@ -44,7 +44,7 @@
 }
 
 .prose p {
-  @apply leading-relaxed text-base lg:text-lg text-default;
+  @apply leading-relaxed text-default;
   font-weight: 500;
 }
 
@@ -62,21 +62,6 @@
 
 .prose code {
   @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium;
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.2s;
-}
-
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(-5px);
-}
-
-.page-enter-from {
-  opacity: 0;
-  transform: translateY(5px);
 }
 
 @keyframes fadeUp {

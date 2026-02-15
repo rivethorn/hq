@@ -109,12 +109,12 @@ onUnmounted(() => {
             <span>·</span>
             <span>{{ page?.tag }}</span>
           </div>
-          <NuxtLink :to="route.path" class="text-4xl lg:text-5xl text-shadow-md font-bold lg:leading-14 mb-4">
+          <NuxtLink :to="route.path" class="text-4xl text-shadow-md font-bold lg:leading-14 mb-4">
             <h2>{{
               page?.title
               }}</h2>
           </NuxtLink>
-          <span class="text-muted text-xl lg:text-2xl">{{
+          <span class="text-muted text-xl">{{
             page?.description
             }}</span>
         </div>

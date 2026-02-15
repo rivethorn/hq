@@ -52,12 +52,10 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
                 <span>·</span>
                 <span>{{ post.tag }}</span>
               </div>
-              <h2 class="text-3xl font-bold">
+              <h2 class="text-2xl font-bold">
                 {{ post.title }}
               </h2>
-              <span class="text-muted text-base lg:text-xl">{{
-                post.description
-              }}</span>
+              <span class="text-muted text-base">{{ post.description }}</span>
               <div
                 class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4"
               >
