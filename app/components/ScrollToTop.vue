@@ -39,7 +39,7 @@ onUnmounted(() => {
         <UButton
           icon="lucide-chevron-up"
           aria-label="Scroll to top"
-          size="lg"
+          size="xl"
           color="neutral"
           variant="subtle"
           class="rounded-full shadow-lg text-muted lg:p-2.5 hover:shadow-xl transition-transform hover:-translate-y-0.5"
