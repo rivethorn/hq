@@ -54,7 +54,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
                 <span>·</span>
                 <span>{{ post.tag }}</span>
               </div>
-              <h2 class="text-2xl font-bold tracking-tighter">
+              <h2 class="text-2xl font-semibold tracking-tighter">
                 {{ post.title }}
               </h2>
               <span class="text-muted text-base">{{ post.description }}</span>
