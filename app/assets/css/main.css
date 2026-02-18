@@ -63,6 +63,10 @@
   @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium lg:text-base;
 }
 
+.prose li {
+  @apply lg:text-lg;
+}
+
 @keyframes fadeUp {
   to {
     opacity: 1;
