@@ -2,10 +2,6 @@
 import { Analytics } from "@vercel/analytics/nuxt";
 import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 
-useHead({
-  script: [{ type: "module", src: "https://unpkg.com/@le-pepe/snow-effect" }],
-});
-
 useSeoMeta({
   title: "Rivethorn's HQ",
   ogTitle: "Rivethorn's HQ",
@@ -21,6 +17,11 @@ const color = useColorMode();
 
 const { enableSnowEffect } = useChristmasSeason();
 
+if (enableSnowEffect) {
+  useHead({
+    script: [{ type: "module", src: "https://unpkg.com/@le-pepe/snow-effect" }],
+  });
+}
 onMounted(() => {
   const onScroll = () => {
     const scrollTop = window.scrollY;
