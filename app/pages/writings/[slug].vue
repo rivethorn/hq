@@ -101,15 +101,15 @@ onUnmounted(() => {
           <UIcon name="lucide-arrow-left" class="size-4" />
           <span>Go Back</span>
         </UButton>
-        <div class="flex flex-col gap-6 mt-8">
-          <div class="flex gap-3 text-muted text-sm lg:text-base">
+        <div class="flex flex-col gap-6 mt-8 text-center">
+          <div class="flex gap-3 text-muted text-sm lg:text-base mx-auto">
             <span>{{ new Date(page?.date || "").toDateString() }}</span>
             <span>·</span>
             <span>{{ page?.ttr }}</span>
             <span>·</span>
             <span>{{ page?.tag }}</span>
           </div>
-          <NuxtLink :to="route.path" class="text-4xl text-shadow-md font-bold lg:leading-14 mb-4">
+          <NuxtLink :to="route.path" class="text-4xl lg:text-6xl text-shadow-md font-semibold lg:leading-14 mb-4 tracking-tighter">
             <h2>{{
               page?.title
               }}</h2>
