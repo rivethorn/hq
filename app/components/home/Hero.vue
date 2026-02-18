@@ -10,27 +10,11 @@
           src="profile.jpeg"
           class="rounded-full size-15 lg:size-20 border-2 border-accented shadow-md"
         />
-        <div class="hidden lg:flex items-center pointer-events-none">
-          <TextPressure
-            class="text-shadow-md"
-            text="Oh hey, Welcome!"
-            font-family="Source Sans 3"
-            font-url="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-            :min-font-size="75"
-            :flex="true"
-            :italic="false"
-            span-class="text-highlighted"
+        <div>
+          <h1
+            class="text-5xl lg:text-6xl font-black text-shadow-md tracking-tighter"
           >
-          </TextPressure>
-          <span
-            class="text-4xl lg:text-5xl inline-block animate-wave m-2 text-shadow-md"
-          >
-            👋
-          </span>
-        </div>
-        <div class="lg:hidden">
-          <h1 class="text-4xl font-black text-shadow-md">
-            Oh hey, Welcome!<span
+            Oh Hey, Welcome!<span
               class="inline-block animate-wave m-2 text-shadow-md"
             >
               👋
@@ -46,7 +30,7 @@
       :transition="{ duration: 0.5, delay: 0.15 }"
     >
       <p
-        class="text-lg lg:text-xl font-medium text-toned mb-18 leading-relaxed"
+        class="text-base lg:text-xl font-medium text-toned mb-18 leading-relaxed"
       >
         I’m Hassan aka. Rivethorn, a software engineer and full-stack developer
         who enjoys building stuff — from full-fledged, beautiful websites that
