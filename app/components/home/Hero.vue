@@ -12,10 +12,10 @@
         />
         <div>
           <h1
-            class="text-5xl lg:text-6xl font-black text-shadow-md tracking-tighter"
+            class="text-5xl lg:text-6xl font-black text-shadow-sm tracking-tighter"
           >
             Oh Hey, Welcome!<span
-              class="inline-block animate-wave m-2 text-shadow-md"
+              class="inline-block animate-wave m-2 text-shadow-sm"
             >
               👋
             </span>

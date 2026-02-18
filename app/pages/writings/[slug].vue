@@ -109,7 +109,7 @@ onUnmounted(() => {
             <span>·</span>
             <span>{{ page?.tag }}</span>
           </div>
-          <NuxtLink :to="route.path" class="text-4xl lg:text-6xl text-shadow-md font-semibold lg:leading-14 mb-4 tracking-tighter">
+          <NuxtLink :to="route.path" class="text-4xl lg:text-6xl text-shadow-sm font-semibold lg:leading-14 mb-4 tracking-tighter">
             <h2>{{
               page?.title
               }}</h2>
