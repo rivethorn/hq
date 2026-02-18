@@ -2,8 +2,8 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: "Source Sans 3", sans-serif;
-  --font-mono: "Source Code Pro", monospace;
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
 @theme {
@@ -44,12 +44,11 @@
 }
 
 .prose p {
-  @apply leading-relaxed text-default;
-  font-weight: 500;
+  @apply leading-relaxed text-default lg:text-lg;
 }
 
 .prose h2 a {
-  @apply mt-16 mb-6 text-3xl font-bold;
+  @apply mt-16 mb-6 text-3xl font-semibold;
 }
 
 .prose h3 {
@@ -61,7 +60,7 @@
 }
 
 .prose code {
-  @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium;
+  @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium lg:text-base;
 }
 
 @keyframes fadeUp {
