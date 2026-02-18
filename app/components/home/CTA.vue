@@ -17,6 +17,9 @@ const btn: ButtonProps = {
     class="mb-28 mt-28 mx-auto"
   >
     <UPageCTA
+      :ui="{
+        title: 'tracking-tighter',
+      }"
       title="Let's Build Something Together!"
       description="Have a project in mind or just want to say hi? I’d love to collaborate and bring your ideas to life. Reach out and let’s make it happen!"
     >

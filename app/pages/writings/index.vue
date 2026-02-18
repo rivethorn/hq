@@ -14,8 +14,10 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
       :transition="{ duration: 0.3 }"
       :in-view-options="{ once: true }"
     >
-      <h1 class="text-5xl font-black mb-6">My Writings</h1>
-      <h3 class="text-xl font-medium text-muted">Everything I've written.</h3>
+      <h1 class="text-5xl font-black mb-6 tracking-tighter">My Writings</h1>
+      <h3 class="text-xl font-medium text-muted tracking-tight">
+        Everything I've written.
+      </h3>
     </Motion>
     <div v-if="!posts?.values">Loading posts…</div>
     <div v-else class="-mt-8">
@@ -52,7 +54,7 @@ if (!posts.value || !error.value) createError({ statusCode: 404 });
                 <span>·</span>
                 <span>{{ post.tag }}</span>
               </div>
-              <h2 class="text-2xl font-bold">
+              <h2 class="text-2xl font-bold tracking-tighter">
                 {{ post.title }}
               </h2>
               <span class="text-muted text-base">{{ post.description }}</span>

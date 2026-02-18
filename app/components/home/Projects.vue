@@ -29,7 +29,7 @@ const projectsList: ProjectsFeature[] =
     :in-view="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.4 }"
     :in-view-options="{ once: true }"
-    class="text-3xl font-black mb-8"
+    class="text-3xl font-black mb-8 tracking-tighter"
   >
     My latest projects
   </Motion>

@@ -14,8 +14,10 @@ if (!projects.value || !error.value) createError({ statusCode: 404 });
       :transition="{ duration: 0.3 }"
       :in-view-options="{ once: true }"
     >
-      <h1 class="text-5xl font-black mb-6">My Projects</h1>
-      <h3 class="text-xl font-medium text-muted">Everything I've worked on.</h3>
+      <h1 class="text-5xl font-black mb-6 tracking-tighter">My Projects</h1>
+      <h3 class="text-xl font-medium text-muted tracking-tight">
+        Everything I've worked on.
+      </h3>
     </Motion>
     <div v-if="!projects?.values">Loading projects…</div>
     <div v-else>

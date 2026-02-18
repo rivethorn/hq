@@ -27,7 +27,7 @@ const features: Feature[] = [
     :in-view="{ opacity: 1, y: 0 }"
     :transition="{ duration: 0.4 }"
     :in-view-options="{ once: true }"
-    class="text-3xl font-black mb-8"
+    class="text-3xl font-black mb-8 tracking-tighter"
     >My Services</Motion
   >
   <div class="grid md:grid-cols-2 gap-4 mb-24">
