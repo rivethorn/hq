@@ -6,36 +6,27 @@
     :in-view-options="{ once: true }"
     class="mb-18"
   >
-    <UPageCard class="lg:p-10" variant="naked">
-      <p
-        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
-      >
+    <UPageCard
+      class="lg:p-10 text-base lg:text-lg font-medium text-toned leading-relaxed"
+      variant="naked"
+    >
+      <p class="mb-8">
         Beyond code, I’m also documenting how I think and build — from deep
         dives into Rust to Nuxt project walkthroughs — and sharing the process
         with others. That’s partly why I’m thinking of starting a YouTube series
         focused on calm, project-driven programming in different operating
         systems: it’s about the craft, not the bells and whistles.
       </p>
-      <p
-        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
-      >
+      <p class="mb-8">
         When I’m not writing code, I’m learning something new, tinkering with
         systems, or planning the next project. I try to approach problems the
         same way I approach life: with curiosity, patience, and a willingness to
         explore until the right solution reveals itself.
       </p>
-      <p
-        class="text-base lg:text-lg font-medium text-toned mb-8 leading-relaxed"
-      >
+      <p class="mb-8">
         If you like thoughtful software, clear explanations, and projects built
         with intention, hit me up; we can be good friends!
       </p>
     </UPageCard>
   </Motion>
 </template>
-
-<style lang="css" scoped>
-p {
-  font-family: "IBM Plex Sans";
-}
-</style>
