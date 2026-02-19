@@ -1,10 +1,10 @@
 ---
 title: Why I Moved My Blog from Cloudflare to Vercel
+date: 2026-02-15
+description: not for performance, but for better flow, simpler analytics, and a smoother developer experience.
 tag: Developer Experience
 ttr: 6 min read
-description: not for performance, but for better flow, simpler analytics, and a smoother developer experience.
 author: Hassan Qasemi
-date: 2026-02-15
 ---
 
 For a long time, my blog lived on Cloudflare.
@@ -86,16 +86,16 @@ npm install @vercel/analytics
 
 Then enable it in `nuxt.config.ts`:
 
-```ts
+```ts [nuxt.config.ts]
 export default defineNuxtConfig({
-	modules: ['@vercel/analytics/nuxt']
+    modules: ['@vercel/analytics/nuxt']
 });
 ```
 
 That’s it.
 
-No scripts to manage.  
-No consent popups.  
+No scripts to manage. :br
+No consent popups. :br
 No external dashboards to configure.
 
 The analytics are privacy-friendly, integrated into the platform, and scoped exactly to what I need — nothing more.
@@ -120,7 +120,7 @@ On Vercel, I find myself writing more “plain Nuxt” code. The platform mostly
 
 ## Opinionated Defaults Are a Feature
 
-Cloudflare gives you power.  
+Cloudflare gives you power. :br
 Vercel gives you defaults.
 
 At this stage, I value defaults more.
@@ -137,8 +137,8 @@ I don’t want infrastructure to be a creative decision.
 
 It’s worth saying explicitly: this move wasn’t about performance.
 
-Both Cloudflare and Vercel are fast.  
-Both scale far beyond what this site will ever need.  
+Both Cloudflare and Vercel are fast. :br
+Both scale far beyond what this site will ever need. :br
 Both are reliable.
 
 If you’re optimizing for edge control, Cloudflare might still be the better choice.
@@ -153,8 +153,8 @@ At this point, my blog isn’t an experiment. It’s a place to write, publish, 
 
 Vercel does that better *for me* — especially when paired with Nuxt.
 
-That doesn’t make it universally better.  
-It doesn’t invalidate Cloudflare.  
+That doesn’t make it universally better. :br
+It doesn’t invalidate Cloudflare. :br
 And it doesn’t mean I won’t move again someday.
 
 It just means that right now, the trade-offs align with how I want to work.

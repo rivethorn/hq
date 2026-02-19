@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms", "motion-v/nuxt"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms", "motion-v/nuxt", "nuxt-studio"],
   css: ["~/assets/css/main.css"],
   fonts: { local: {}, google: {} },
   llms: {
