@@ -3,7 +3,7 @@ title: We Need to Slow Down
 date: 2026-02-27
 description: Whatever happened to the craft?
 tag: Development
-ttr: 6 min read
+ttr: 8 min read
 author: Hassan Qasemi
 ---
 
