@@ -1,10 +1,10 @@
 ---
 title: We Need to Slow Down
+date: 2026-02-27
+description: Whatever happened to the craft?
 tag: Development
 ttr: 6 min read
-description: Whatever happened to the craft?
 author: Hassan Qasemi
-date: 2026-02-27
 ---
 
 I am not against AI.
@@ -12,6 +12,8 @@ I am not against AI.
 Let me start there — clearly.
 
 Artificial intelligence is one of the most powerful tools ever created. It is accelerating medicine, research, accessibility, and creative work. In programming, it can explain complex concepts in seconds, scaffold boilerplate, suggest optimizations, and help developers break through mental blocks.
+
+Hell, I'm using AI to generate the images for the posts, I use it every day.
 
 AI is not the enemy.
 
@@ -37,7 +39,7 @@ That’s augmentation.
 
 But asking it to generate entire architectures, entire features, entire products — and then shipping them without deeply understanding them — that’s something else.
 
-That’s not acceleration. 
+That’s not acceleration.
 That’s abdication.
 
 And the consequences are subtle at first.
@@ -48,9 +50,9 @@ And the consequences are subtle at first.
 
 Vibe coding feels fast.
 
-You prompt.  
-It fills.  
-You tweak.  
+You prompt. :br
+It fills. :br
+You tweak. :br
 You ship.
 
 The app runs. The UI renders. The API responds. It feels productive.
@@ -140,15 +142,15 @@ It feels like innovation has been flattened into aesthetic conformity.
 
 What’s happening today is strange.
 
-Someone has a genuinely good idea.  
-Something interesting.  
+Someone has a genuinely good idea. :br
+Something interesting. :br
 Something novel.
 
 But instead of carefully designing a product that expresses that idea uniquely, they take the shortest path to implementation.
 
-AI scaffolds the backend.  
-AI generates the frontend.  
-AI writes the landing page copy.  
+AI scaffolds the backend. :br
+AI generates the frontend. :br
+AI writes the landing page copy. :br
 AI designs the logo.
 
 And the result works.
@@ -165,9 +167,9 @@ When everything is generated from the same statistical patterns, everything star
 
 There is something deeply beautiful about wrestling with a problem.
 
-About modeling your data structures from scratch.  
-About choosing an architecture intentionally.  
-About rejecting an abstraction because it doesn’t feel right.  
+About modeling your data structures from scratch. :br
+About choosing an architecture intentionally. :br
+About rejecting an abstraction because it doesn’t feel right. :br
 About spending hours simplifying something that technically already works.
 
 That friction is not inefficiency.
@@ -217,8 +219,8 @@ That confidence cannot be prompted into existence.
 
 We are addicted to shipping.
 
-Shipping fast.  
-Shipping MVP.  
+Shipping fast. :br
+Shipping MVP. :br
 Shipping before someone else does.
 
 But we rarely ask: what are we shipping into the world?
