@@ -25,6 +25,10 @@ if (!home.value) {
 
 <template>
     <div class="relative overflow-hidden pb-20 pt-24 sm:pt-32">
+        <ClientOnly>
+            <HomeMeteors v-if="!enableSnowEffect" :number="30" class="-z-50" />
+        </ClientOnly>
+
         <Motion
             :initial="{ opacity: 0, y: 18 }"
             :animate="{ opacity: 1, y: 0 }"
