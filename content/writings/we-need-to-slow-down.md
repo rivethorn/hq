@@ -13,8 +13,6 @@ Let me start there — clearly.
 
 Artificial intelligence is one of the most powerful tools ever created. It is accelerating medicine, research, accessibility, and creative work. In programming, it can explain complex concepts in seconds, scaffold boilerplate, suggest optimizations, and help developers break through mental blocks.
 
-Hell, I'm using AI to generate the images for the posts, I use it every day.
-
 AI is not the enemy.
 
 What concerns me is something else.
@@ -116,7 +114,7 @@ But because it was designed by people who were thinking deeply.
 
 Look at early applications from companies like Winamp, Nullsoft’s chaotic masterpiece. It wasn’t just a media player — it had personality. Skins. Weird visualizers. Experimental UI decisions.
 
-Or early versions of Apple software under Steve Jobs — polarizing, opinionated, deliberate. You could feel that someone cared obsessively about how it *felt*, not just that it worked.
+Or early versions of Apple software under Steve Jobs — polarizing, opinionated, deliberate. You could feel that someone cared obsessively about how it _felt_, not just that it worked.
 
 Even early indie software — small utilities written by a single developer — had quirks. Sometimes ugly. Sometimes imperfect. But distinct.
 

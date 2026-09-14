@@ -1,0 +1,5 @@
+title: TitleCard
+description: A small utility to center your ASCII art in the terminal
+url: https://github.com/rivethorn/titlecard
+date: 2026-06-23
+stack: Rust

@@ -1,28 +1,26 @@
 <template>
-  <USeparator />
-  <UFooter class="pb-10 lg:pb-20 pt-2">
-    <template #left>
-      <ColorThemeTab />
-    </template>
+    <UFooter class="py-1 lg:pb-4 lg:pt-2">
+        <template #left>
+            <div class="flex items-center gap-3">
+                <NuxtImg src="/logo.svg" alt="" class="size-6 dark:invert" />
+                <span class="text-xs font-semibold tracking-tight">Rivethorn’s HQ</span>
+            </div>
+        </template>
 
-    <template #right>
-      <p class="text-muted text-sm">
-        © {{ new Date().getFullYear() }} Hassan Qasemi
-      </p>
-    </template>
-  </UFooter>
+        <template #default>
+            <nav class="flex items-center gap-1" aria-label="Footer navigation">
+                <UButton to="/" label="Home" variant="link" color="neutral" size="sm" />
+                <UButton to="/projects" label="Projects" variant="link" color="neutral" size="sm" />
+                <UButton to="/writings" label="Writings" variant="link" color="neutral" size="sm" />
+            </nav>
+        </template>
 
-  <div class="hidden lg:flex justify-center">
-    <Motion
-      :initial="{ opacity: 0, y: 30 }"
-      :in-view="{ opacity: 1, y: 0 }"
-      :transition="{ duration: 0.3 }"
-      :in-view-options="{ once: true }"
-    >
-      <NuxtImg
-        src="/text.svg"
-        class="w-[92%] lg:w-5xl light:invert mask-b-from-60%"
-      />
-    </Motion>
-  </div>
+        <template #right>
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-muted"
+                    >© {{ new Date().getFullYear() }} Hassan Qasemi</span
+                >
+            </div>
+        </template>
+    </UFooter>
 </template>

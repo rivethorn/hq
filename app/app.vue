@@ -1,90 +1,81 @@
 <script setup lang="ts">
-import { Analytics } from "@vercel/analytics/nuxt";
-import { SpeedInsights } from "@vercel/speed-insights/nuxt";
-
 useSeoMeta({
-  title: "Rivethorn's HQ",
-  ogTitle: "Rivethorn's HQ",
-  description:
-    "This is where you can read my blogs, thoughts and essays on programming and technology.",
-  ogDescription:
-    "This is where you can read my blogs, thoughts and essays on programming and technology.",
+    title: "Rivethorn's HQ",
+    ogTitle: "Rivethorn's HQ",
+    description:
+        "This is where you can read my blogs, thoughts and essays on programming and technology.",
+    ogDescription:
+        "This is where you can read my blogs, thoughts and essays on programming and technology.",
 });
 
 const progress = ref(0);
 const route = useRoute();
 const color = useColorMode();
+const toaster = { expand: false };
 
 const { enableSnowEffect } = useChristmasSeason();
 
 if (enableSnowEffect) {
-  useHead({
-    script: [{ type: "module", src: "https://unpkg.com/@le-pepe/snow-effect" }],
-  });
+    useHead({
+        script: [{ type: "module", src: "https://unpkg.com/@le-pepe/snow-effect" }],
+    });
 }
 onMounted(() => {
-  const onScroll = () => {
-    const scrollTop = window.scrollY;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+    const onScroll = () => {
+        const scrollTop = window.scrollY;
+        const height =
+            document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-    progress.value = height > 0 ? scrollTop / height : 0;
-  };
+        progress.value = height > 0 ? scrollTop / height : 0;
+    };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-  onBeforeUnmount(() => {
-    window.removeEventListener("scroll", onScroll);
-  });
+    onBeforeUnmount(() => {
+        window.removeEventListener("scroll", onScroll);
+    });
 });
 </script>
 
 <template>
-  <UApp>
-    <Analytics />
-    <SpeedInsights />
-    <NuxtLoadingIndicator color="#e78a4e" />
+    <UApp :toaster="toaster">
+        <NuxtLoadingIndicator color="#e78a4e" />
 
-    <ClientOnly>
-      <snow-effect
-        v-if="enableSnowEffect"
-        :color="color.value === 'dark' ? '#ffffff55' : '#33333355'"
-        flakes="85"
-        speed="1"
-      />
-    </ClientOnly>
+        <ClientOnly>
+            <snow-effect
+                v-if="enableSnowEffect"
+                :color="color.value === 'dark' ? '#ffffff55' : '#33333355'"
+                flakes="85"
+                speed="1"
+            />
+        </ClientOnly>
 
-    <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-      <div
-        class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-1"
-      />
-    </div>
+        <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+            <div class="absolute inset-[-200%] size-[400%] bg-[url('/noise.png')] opacity-1" />
+        </div>
 
-    <UMain>
-      <Header />
+        <UMain>
+            <Blur position="both" :size="80" class="z-20" />
+            <Header />
 
-      <div
-        v-if="route.path.startsWith('/writings/')"
-        class="fixed left-0 right-0 h-0.5 z-40"
-      >
-        <div
-          class="h-full origin-left bg-primary"
-          :style="{ transform: `scaleX(${progress})` }"
-        />
-      </div>
+            <div v-if="route.path.startsWith('/writings/')" class="fixed left-0 right-0 h-0.5 z-40">
+                <div
+                    class="h-full origin-left bg-primary"
+                    :style="{ transform: `scaleX(${progress})` }"
+                />
+            </div>
 
-      <NuxtRouteAnnouncer />
-      <NuxtPage class="max-w-[92%] lg:w-5xl mx-auto" />
+            <NuxtRouteAnnouncer />
+            <NuxtPage class="max-w-[92%] lg:w-4xl lg:max-w-max mx-auto" />
 
-      <ScrollToTop />
-    </UMain>
+            <ScrollToTop />
+        </UMain>
 
-    <Footer />
+        <Footer />
 
-    <ClientOnly>
-      <CookieConsentBanner />
-    </ClientOnly>
-  </UApp>
+        <ClientOnly>
+            <CookieConsentBanner />
+        </ClientOnly>
+    </UApp>
 </template>

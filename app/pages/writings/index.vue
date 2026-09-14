@@ -1,76 +1,68 @@
 <script setup lang="ts">
-const { data: posts, error } = await useAsyncData("posts-all", () =>
-  queryCollection("writing").order("date", "DESC").all(),
-);
+const {
+    data: posts,
+    error,
+    pending,
+} = await useAsyncData("posts-all", () => queryCollection("writing").order("date", "DESC").all());
 
-if (!posts.value || !error.value) createError({ statusCode: 404 });
+if (error.value) throw createError({ statusCode: 404 });
 </script>
 
 <template>
-  <div class="flex flex-col items-start justify-center gap-10 py-20">
-    <Motion
-      :initial="{ opacity: 0, y: 20 }"
-      :in-view="{ opacity: 1, y: 0 }"
-      :transition="{ duration: 0.3 }"
-      :in-view-options="{ once: true }"
-    >
-      <h1 class="text-5xl font-black mb-6 tracking-tighter">My Writings</h1>
-      <h3 class="text-xl font-medium text-muted tracking-tight">
-        Everything I've written.
-      </h3>
-    </Motion>
-    <div v-if="!posts?.values">Loading posts…</div>
-    <div v-else class="-mt-8">
-      <Motion
-        v-for="(post, index) in posts"
-        :key="post.title"
-        :initial="{ opacity: 0, y: 20 }"
-        :in-view="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.5, delay: index * 0.05 }"
-        :in-view-options="{ once: true }"
-      >
-        <NuxtLink
-          :to="post.path"
-          class="post-card group flex flex-col gap-3.5 my-16 active:scale-[0.98] bg-elevated/10 shadow-md transition-all hover:bg-accented/30 duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50"
-          :aria-label="`Read ${post.title}`"
-          :style="{ '--stagger': index }"
+    <div class="py-28 sm:py-36">
+        <Motion
+            :initial="{ opacity: 0, y: 20 }"
+            :animate="{ opacity: 1, y: 0 }"
+            :transition="{ duration: 0.3 }"
         >
-          <CrossedDiv
-            class-name="pointer-events-none p-6 lg:p-8 h-full flex lg:flex-row items-center gap-5 lg:gap-5
-            transition-all duration-300
-            ease-[cubic-bezier(0.22,1,0.36,1)]
-            hover:shadow-xl hover:shadow-black/5"
-          >
-            <NuxtImg
-              :src="`posts/${post.path.split('/').at(-1)}.png`"
-              class="flex rounded-md h-fit lg:max-w-2/5"
-              fit="contain"
+            <UPageHeader
+                title="Writings"
+                description="Notes on building, learning, and changing direction."
+                :ui="{
+                    root: 'max-w-2xl p-0',
+                    title: 'text-5xl font-semibold tracking-[-0.04em] sm:text-7xl',
+                    description: 'text-lg leading-relaxed text-muted sm:text-xl',
+                }"
             />
-            <div class="flex flex-col gap-3 lg:min-w-3/5">
-              <div class="flex gap-3 text-muted text-sm lg:text-base">
-                <span>{{ new Date(post.date).toDateString() }}</span>
-                <span>·</span>
-                <span>{{ post.ttr }}</span>
-                <span>·</span>
-                <span>{{ post.tag }}</span>
-              </div>
-              <h2 class="text-2xl font-semibold tracking-tighter">
-                {{ post.title }}
-              </h2>
-              <span class="text-muted text-base">{{ post.description }}</span>
-              <div
-                class="flex items-center gap-2 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:gap-4"
-              >
-                <span class="group-hover:text-muted">Read more</span>
-                <UIcon
-                  name="lucide-arrow-right"
-                  class="size-5 transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </div>
-            </div>
-          </CrossedDiv>
-        </NuxtLink>
-      </Motion>
+        </Motion>
+        <div v-if="pending" class="mt-20 text-muted">Loading posts…</div>
+        <div v-else class="mt-20 w-full divide-y divide-accented border-b border-accented">
+            <Motion
+                v-for="(post, index) in posts"
+                :key="post.title"
+                :initial="{ opacity: 0, y: 20 }"
+                :animate="{ opacity: 1, y: 0 }"
+                :transition="{ duration: 0.5, delay: index * 0.05 }"
+                :class="{ 'border-t border-accented': index === 0 }"
+            >
+                <NuxtLink
+                    :to="post.path"
+                    class="group relative block py-8 pr-10 transition-colors hover:bg-elevated/40"
+                    :aria-label="`Read ${post.title}`"
+                    :style="{ '--stagger': index }"
+                >
+                    <div
+                        class="grid gap-6 sm:grid-cols-[10rem_minmax(0,1fr)_auto] sm:items-start sm:gap-10"
+                    >
+                        <div class="text-sm text-muted">
+                            <p>{{ new Date(post.date).toDateString() }}</p>
+                            <p class="mt-1">{{ post.ttr }} · {{ post.tag }}</p>
+                        </div>
+                        <div class="max-w-2xl">
+                            <h2 class="text-xl font-medium tracking-tight">
+                                {{ post.title }}
+                            </h2>
+                            <p class="mt-1 leading-relaxed text-muted">
+                                {{ post.description }}
+                            </p>
+                        </div>
+                    </div>
+                    <UIcon
+                        name="lucide-arrow-up-right"
+                        class="absolute right-0 top-0 size-8 -translate-y-2 translate-x-2 shrink-0 transition-transform group-hover:scale-110"
+                    />
+                </NuxtLink>
+            </Motion>
+        </div>
     </div>
-  </div>
 </template>

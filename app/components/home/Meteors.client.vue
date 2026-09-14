@@ -1,5 +1,10 @@
 <template>
-    <span v-for="(s, i) in meteorStyles" :key="i" :class="localStyles().wrapper({ class: props.class })" :style="s">
+    <span
+        v-for="(s, i) in meteorStyles"
+        :key="i"
+        :class="localStyles().wrapper({ class: props.class })"
+        :style="s"
+    >
         <div :class="localStyles().tail()" />
     </span>
 </template>
@@ -34,9 +39,10 @@ const meteorStyles = ref<CSSProperties[]>(
         left: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
         animationDelay: Math.random() * (props.maxDelay - props.minDelay) + props.minDelay + "s",
         animationDuration:
-            Math.floor(Math.random() * (props.maxDuration - props.minDuration) + props.minDuration) +
-            "s",
-    }))
+            Math.floor(
+                Math.random() * (props.maxDuration - props.minDuration) + props.minDuration,
+            ) + "s",
+    })),
 );
 
 const setStyles = () => {
@@ -46,8 +52,9 @@ const setStyles = () => {
         left: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,
         animationDelay: Math.random() * (props.maxDelay - props.minDelay) + props.minDelay + "s",
         animationDuration:
-            Math.floor(Math.random() * (props.maxDuration - props.minDuration) + props.minDuration) +
-            "s",
+            Math.floor(
+                Math.random() * (props.maxDuration - props.minDuration) + props.minDuration,
+            ) + "s",
     }));
     meteorStyles.value = styles;
 };
@@ -63,7 +70,7 @@ watch(
         props.maxDuration,
         props.angle,
     ],
-    setStyles
+    setStyles,
 );
 
 const localStyles = tv({

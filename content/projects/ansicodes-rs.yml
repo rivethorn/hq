@@ -1,0 +1,5 @@
+title: ansicodes-rs
+description: Simple ANSI escape code constants for all your needs in the terminal
+url: https://github.com/rivethorn/ansicodes-rs
+date: 2026-08-10
+stack: Rust

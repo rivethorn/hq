@@ -2,68 +2,73 @@
 import type { NavigationMenuItem } from "@nuxt/ui";
 
 const items = computed<NavigationMenuItem[]>(() => [
-  {
-    label: "Home",
-    to: "/",
-    class: "p-3",
-  },
-  {
-    label: "Projects",
-    to: "/projects",
-    class: "p-3",
-  },
-  {
-    label: "Writings",
-    to: "/writings",
-    class: "p-3",
-  },
+    {
+        label: "Home",
+        to: "/",
+        class: "p-3",
+    },
+    {
+        label: "Projects",
+        to: "/projects",
+        class: "p-3",
+    },
+    {
+        label: "Writings",
+        to: "/writings",
+        class: "p-3",
+    },
 ]);
 </script>
 
 <template>
-  <UHeader mode="slideover" :ui="{ root: 'border-accented' }">
-    <template #title>
-      <div class="inline-flex gap-2.5 group items-center">
-        <NuxtImg
-          src="logo.svg"
-          class="dark:invert group-hover:opacity-60 transition-opacity size-12"
-        />
-        <h1 class="group-hover:text-muted transition-colors">RHQ</h1>
-      </div>
-    </template>
+    <UHeader
+        mode="slideover"
+        :ui="{
+            root: 'fixed top-0 left-0 right-0 z-40 border-0 bg-transparent backdrop-blur-none border-accented',
+        }"
+    >
+        <template #title>
+            <div class="inline-flex gap-2.5 group items-center">
+                <NuxtImg
+                    src="logo.svg"
+                    class="dark:invert group-hover:opacity-60 transition-opacity size-12"
+                />
+                <h1 class="group-hover:text-muted transition-colors">HsnQ</h1>
+            </div>
+        </template>
 
-    <UNavigationMenu :items="items" variant="link" />
+        <UNavigationMenu :items="items" variant="link" />
 
-    <template #right>
-      <SnowEffectToggle />
+        <template #right>
+            <SnowEffectToggle />
 
-      <ColorAnimBtn />
+            <ColorAnimBtn />
 
-      <UTooltip text="RSS Feed">
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="/rss.xml"
-          target="_blank"
-          icon="lucide-rss"
-          aria-label="RSS"
-        />
-      </UTooltip>
+            <UTooltip text="RSS Feed">
+                <UButton
+                    color="neutral"
+                    variant="ghost"
+                    to="/rss.xml"
+                    target="_blank"
+                    icon="lucide-rss"
+                    aria-label="RSS"
+                />
+            </UTooltip>
 
-      <UTooltip text="My GitHub">
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/rivethorn"
-          target="_blank"
-          icon="lucide-github"
-          aria-label="GitHub"
-        />
-      </UTooltip>
-    </template>
+            <UTooltip text="My GitHub">
+                <UButton
+                    color="neutral"
+                    variant="ghost"
+                    to="https://github.com/rivethorn"
+                    target="_blank"
+                    icon="lucide-github"
+                    aria-label="GitHub"
+                />
+            </UTooltip>
+        </template>
 
-    <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="p-1" />
-    </template>
-  </UHeader>
+        <template #body>
+            <UNavigationMenu :items="items" orientation="vertical" class="p-1" />
+        </template>
+    </UHeader>
 </template>

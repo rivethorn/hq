@@ -29,7 +29,7 @@ My blog never had uptime issues. Builds worked. Performance was good.
 
 But despite all that, Cloudflare never fully disappeared into the background.
 
-There was always *something* to think about:
+There was always _something_ to think about:
 
 - Edge runtime differences
 - Platform-specific APIs
@@ -60,7 +60,7 @@ The deployment process is boring in the best way:
 - Logs are clear and accessible
 - Environment variables work as expected, without edge-specific surprises
 
-I didn’t have to think about *where* my code runs. I could just think about *what* it does.
+I didn’t have to think about _where_ my code runs. I could just think about _what_ it does.
 
 That alignment matters more than I expected.
 
@@ -88,7 +88,7 @@ Then enable it in `nuxt.config.ts`:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
-    modules: ['@vercel/analytics/nuxt']
+    modules: ["@vercel/analytics/nuxt"],
 });
 ```
 
@@ -112,7 +112,7 @@ On Cloudflare, certain things required extra care:
 - Nuxt features that worked, but needed adjustments
 - APIs that behaved slightly differently depending on context
 
-Again, none of this was catastrophic. But it meant thinking about the platform *while* building features.
+Again, none of this was catastrophic. But it meant thinking about the platform _while_ building features.
 
 On Vercel, I find myself writing more “plain Nuxt” code. The platform mostly stays out of the way, and that lowers cognitive load — especially for a solo project.
 
@@ -151,7 +151,7 @@ This move was about **comfort**, predictability, and flow.
 
 At this point, my blog isn’t an experiment. It’s a place to write, publish, and occasionally rethink ideas. The infrastructure should fade into the background.
 
-Vercel does that better *for me* — especially when paired with Nuxt.
+Vercel does that better _for me_ — especially when paired with Nuxt.
 
 That doesn’t make it universally better. :br
 It doesn’t invalidate Cloudflare. :br

@@ -1,0 +1,5 @@
+title: reflags
+description: Builder-style command-line argument parser for Odin
+url: https://github.com/rivethorn/reflags
+date: 2026-09-02
+stack: Odin

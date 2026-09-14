@@ -6,13 +6,14 @@ description: I was wrong
 author: Hassan Qasemi
 date: 2025-12-22
 ---
+
 ## Over-engineer the World!
 
-The first thing that came to mind when I decided to start this site was: *"I’m not going to build a static site."* I knew a static setup was probably the right choice for a project like this, but I simply didn’t want to go that route.
+The first thing that came to mind when I decided to start this site was: _"I’m not going to build a static site."_ I knew a static setup was probably the right choice for a project like this, but I simply didn’t want to go that route.
 
 It felt too bland for my taste.
 
-*"Why would I use an SSG like every other sane human being? I want to over‑engineer my stack—otherwise, what’s the point of living? Live dangerously. Live on the edge."* That sort of thing.
+_"Why would I use an SSG like every other sane human being? I want to over‑engineer my stack—otherwise, what’s the point of living? Live dangerously. Live on the edge."_ That sort of thing.
 
 I was already using [Markdown](https://www.markdownguide.org/) with [Obsidian](https://obsidian.md/) for note‑taking, so I was very familiar with it. It’s also a joy to write in, so I **obviously** wanted to keep using it for blogging.
 

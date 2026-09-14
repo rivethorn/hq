@@ -2,74 +2,79 @@
 @import "@nuxt/ui";
 
 @theme {
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "Geist Mono", monospace;
+    --font-sans: "Raveo Regular", sans-serif;
+    --font-mono: "Fira Code", monospace;
 }
 
 @theme {
-  --header-width: 68rem;
+    --header-width: 60rem;
 }
 
 ::selection {
-  background: #ff770052;
+    background: #ff770052;
 }
 
 :root {
-  --ui-header-height: --spacing(16);
-  --ui-container: var(--header-width);
-  --ui-primary: #427b58;
+    --ui-header-height: --spacing(16);
+    --ui-container: var(--header-width);
+    --ui-primary: #427b58;
 }
 
 .dark {
-  --ui-primary: #8ec07c;
-  --ui-bg: #09090b;
+    --ui-primary: #8ec07c;
+    /* --ui-bg: #09090b; */
 }
 
 @theme inline {
-  --animate-meteor: meteor 5s linear infinite;
+    --animate-meteor: meteor 5s linear infinite;
 
-  @keyframes meteor {
-    0% {
-      transform: rotate(var(--angle)) translateX(0);
-      opacity: 1;
+    @keyframes meteor {
+        0% {
+            transform: rotate(var(--angle)) translateX(0);
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            transform: rotate(var(--angle)) translateX(-500px);
+            opacity: 0;
+        }
     }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(var(--angle)) translateX(-500px);
-      opacity: 0;
-    }
-  }
 }
 
 .prose p {
-  @apply leading-relaxed text-default lg:text-lg;
+    @apply leading-relaxed text-default;
 }
 
 .prose h2 a {
-  @apply mt-16 mb-6 text-3xl font-semibold;
+    @apply mt-16 mb-6 text-3xl font-semibold;
 }
 
 .prose h3 {
-  @apply mt-12 mb-4 text-2xl font-semibold;
+    @apply mt-12 mb-4 text-2xl font-semibold;
 }
 
 .prose pre {
-  @apply bg-muted p-6;
+    @apply overflow-x-auto bg-muted p-6;
+    white-space: pre;
+}
+
+.prose pre code {
+    white-space: inherit;
 }
 
 .prose code {
-  @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium lg:text-base;
+    @apply rounded leading-relaxed bg-muted py-0.5 lg:font-medium lg:text-base;
 }
 
-.prose li {
-  @apply lg:text-lg;
-}
+/* .prose li {
+    @apply lg:text-lg;
+} */
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
