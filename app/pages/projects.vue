@@ -56,15 +56,7 @@ if (error.value) throw createError({ statusCode: 404 });
                             {{ project.description }}
                         </p>
                     </div>
-                    <div class="flex gap-2 sm:justify-end">
-                        <UButton
-                            label="View"
-                            :to="project.url"
-                            target="_blank"
-                            variant="link"
-                            color="neutral"
-                            trailing-icon="lucide-arrow-up-right"
-                        />
+                    <div class="flex gap-2 justify-end">
                         <UButton
                             v-if="project.story"
                             label="Story"
@@ -72,6 +64,14 @@ if (error.value) throw createError({ statusCode: 404 });
                             variant="link"
                             color="neutral"
                             trailing-icon="lucide-arrow-right"
+                        />
+                        <UButton
+                            label="View"
+                            :to="project.url"
+                            target="_blank"
+                            variant="link"
+                            color="neutral"
+                            trailing-icon="lucide-arrow-up-right"
                         />
                     </div>
                 </div>

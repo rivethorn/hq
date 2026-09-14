@@ -52,7 +52,7 @@ if (!home.value) {
                             </span>
                             {{ home?.availability }}
                         </span>
-                        <span aria-hidden="true">/</span>
+                        <span v-if="home?.location" aria-hidden="true">/</span>
                         <span>{{ home?.location }}</span>
                     </div>
                 </template>
@@ -148,7 +148,7 @@ if (!home.value) {
                                         {{ project.description }}
                                     </p>
                                 </div>
-                                <div class="flex gap-2 sm:justify-end">
+                                <div class="flex gap-2 justify-end">
                                     <UButton
                                         label="View"
                                         :to="project.url"

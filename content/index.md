@@ -2,7 +2,6 @@
 title: Hassan Qasemi
 description: Software engineer and semi web developer trying to building thoughtful software, useful tools, and calm digital experiences.
 availability: Open to interesting collaborations
-location: Based in Earth, working everywhere
 ---
 
 I’m Hassan and this is my corner of the internet, Welcome!
