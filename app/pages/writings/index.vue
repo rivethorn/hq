@@ -16,14 +16,22 @@ if (error.value) throw createError({ statusCode: 404 });
             :transition="{ duration: 0.3 }"
         >
             <UPageHeader
-                title="Writings"
                 description="Notes on building, learning, and changing direction."
                 :ui="{
                     root: 'max-w-2xl p-0',
-                    title: 'text-5xl font-semibold tracking-[-0.04em] sm:text-7xl',
+                    title: 'text-5xl font-bold tracking-tighter sm:text-7xl',
                     description: 'text-lg leading-relaxed text-muted sm:text-xl',
                 }"
-            />
+            >
+                <template #title>
+                    <span class="inline-flex items-center gap-1">
+                        <span>Writings</span>
+                        <span
+                            class="cursor-blink inline-block h-[1em] w-1 rounded-sm bg-current align-middle"
+                        ></span>
+                    </span>
+                </template>
+            </UPageHeader>
         </Motion>
         <div v-if="pending" class="mt-20 text-muted">Loading posts…</div>
         <div v-else class="mt-20 w-full divide-y divide-accented border-b border-accented">

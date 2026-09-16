@@ -22,7 +22,7 @@ if (error.value) throw createError({ statusCode: 404 });
                 description="A collection of tools, experiments, and useful things I’ve built."
                 :ui="{
                     root: 'max-w-2xl p-0',
-                    title: 'text-5xl font-semibold tracking-[-0.04em] sm:text-7xl',
+                    title: 'text-5xl font-bold tracking-tighter sm:text-7xl',
                     description: 'text-lg leading-relaxed text-muted sm:text-xl',
                 }"
             />

@@ -24,7 +24,7 @@ if (!home.value) {
 </script>
 
 <template>
-    <div class="relative overflow-hidden pb-20 pt-24 sm:pt-32">
+    <div class="relative overflow-hidden pb-1 pt-24 sm:pt-32">
         <ClientOnly>
             <HomeMeteors v-if="!enableSnowEffect" :number="30" class="-z-50" />
         </ClientOnly>
@@ -40,9 +40,9 @@ if (!home.value) {
                 :ui="{
                     root: 'pb-16 pt-4 sm:pb-24',
                     container: 'max-w-5xl',
-                    title: 'max-w-3xl text-left text-5xl font-semibold tracking-[-0.04em] sm:text-7xl',
+                    title: 'max-w-3xl text-left text-7xl font-extrabold tracking-tighter sm:text-8xl',
                     description:
-                        'max-w-2xl text-left text-lg leading-relaxed text-muted sm:text-xl',
+                        'max-w-2xl text-left text-lg leading-tight text-muted sm:text-xl font-medium',
                 }"
             >
                 <template #headline>
@@ -65,16 +65,26 @@ if (!home.value) {
                         <UButton
                             to="/projects"
                             label="View projects"
-                            trailing-icon="lucide-arrow-up-right"
+                            color="neutral"
                             variant="subtle"
+                            class="font-bold transition-all hover:-translate-y-0.5 active:translate-y-0.5"
                             size="lg"
                         />
                         <UButton
                             to="/writings"
                             label="Read the writings"
-                            variant="outline"
                             color="neutral"
+                            variant="subtle"
+                            class="font-bold transition-all hover:-translate-y-0.5 active:translate-y-0.5"
                             size="lg"
+                        />
+                        <UButton
+                            to="https://github.com/hella-lang"
+                            label="What I'm building now"
+                            trailing-icon="lucide-arrow-up-right"
+                            class="font-bold transition-all hover:-translate-y-0.5 active:translate-y-0.5"
+                            size="lg"
+                            target="_blank"
                         />
                     </div>
                 </template>
@@ -90,7 +100,7 @@ if (!home.value) {
                 title="A little about the work"
                 :ui="{
                     container: 'max-w-5xl pt-8 sm:pt-12',
-                    title: 'text-2xl sm:text-3xl',
+                    title: 'text-2xl sm:text-3xl tracking-tighter',
                 }"
             >
                 <template #body>
@@ -118,7 +128,7 @@ if (!home.value) {
                 description="A few things I’ve made recently."
                 :ui="{
                     container: 'max-w-5xl',
-                    title: 'text-2xl sm:text-3xl',
+                    title: 'text-2xl sm:text-3xl tracking-tighter',
                     description: 'text-muted',
                 }"
             >
@@ -196,7 +206,7 @@ if (!home.value) {
                 description="Notes on building, learning, and changing direction."
                 :ui="{
                     container: 'max-w-5xl',
-                    title: 'text-2xl sm:text-3xl',
+                    title: 'text-2xl sm:text-3xl tracking-tighter',
                     description: 'text-muted',
                 }"
             >
@@ -270,6 +280,7 @@ if (!home.value) {
                             to="mailto:hassanak813@outlook.com"
                             label="Get in touch"
                             trailing-icon="lucide-arrow-up-right"
+                            class="font-bold transition-all hover:-translate-y-0.5 active:translate-y-0.5"
                             size="lg"
                         />
                     </div>

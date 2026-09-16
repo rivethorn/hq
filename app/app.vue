@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-    title: "Rivethorn's HQ",
-    ogTitle: "Rivethorn's HQ",
+    title: "Hassan Qasemi",
+    ogTitle: "Hassan Qasemi",
     description:
         "This is where you can read my blogs, thoughts and essays on programming and technology.",
     ogDescription:

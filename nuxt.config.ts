@@ -11,8 +11,8 @@ export default defineNuxtConfig({
     css: ["~/assets/css/main.css"],
     fonts: { local: {}, google: {} },
     llms: {
-        domain: "https://rivethorn.is-a.dev",
-        title: "Rivethorn's HQ",
+        domain: "https://hassanq.ir",
+        title: "Hassan Qasemi",
         description:
             "Thoughts and essays on programming and technology, like Vue.JS, Nuxt, and Rust",
     },
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            title: "Rivethorn's HQ",
+            title: "Hassan Qasemi",
             htmlAttrs: {
                 dir: "ltr",
                 lang: "en_US",
