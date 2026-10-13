@@ -7,7 +7,14 @@ export default defineNuxtConfig({
             isCustomElement: (tag) => tag === "snow-effect",
         },
     },
-    modules: ["@nuxt/image", "@nuxt/ui", "@nuxt/content", "nuxt-llms", "motion-v/nuxt"],
+    modules: [
+        "@nuxt/image",
+        "@nuxt/ui",
+        "@nuxt/content",
+        "nuxt-llms",
+        "motion-v/nuxt",
+        "nuxt-studio",
+    ],
     css: ["~/assets/css/main.css"],
     fonts: { local: {}, google: {} },
     llms: {
@@ -20,7 +27,7 @@ export default defineNuxtConfig({
         build: {
             markdown: {
                 highlight: {
-                    langs: ["ts", "js", "json", "vue", "rust", "python", "go", "yaml"],
+                    langs: ["ts", "js", "json", "vue", "rust", "python", "go", "yaml", "odin"],
                     theme: {
                         default: "gruvbox-dark-hard",
                         dark: "gruvbox-dark-hard",
