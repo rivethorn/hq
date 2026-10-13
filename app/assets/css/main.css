@@ -45,6 +45,9 @@
 
 .prose p {
     @apply leading-relaxed text-default;
+    font-family: "Libertinus Sans";
+    font-size: larger;
+    line-height: 1.3em;
 }
 
 .prose h2 a {
